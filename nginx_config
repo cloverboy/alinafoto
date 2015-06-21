@@ -1,0 +1,14 @@
+server {
+        server_name alinafoto.lv www.alinafoto.lv kazufotografs.alinafoto.lv fotografs.alinafoto.lv kazas.alinafoto.lv;
+        listen 80;
+        client_max_body_size 16K;
+        charset utf-8;
+        #root /home/ubuntu/projects/roman/alinafoto.lv/;
+        error_page 404 /404.html;
+
+        location ~* \.(gif|jpg|jpeg|png|ico|js|css|html|swf|xml|txt)$ {
+            root /home/ubuntu/projects/roman/alinafoto.lv;
+        }
+
+        rewrite ^/([a-z]+)?(\/?)(([a-z]+)?)$ /$1$2$4/index.html;
+}
