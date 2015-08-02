@@ -1,0 +1,928 @@
+18:30:30 -- ERROR -- tornado.application -- Uncaught exception GET / (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0', 'If-None-Match': '"8b8997d633529ce969a735da7587429fd3896397"', 'Upgrade-Insecure-Requests': '1'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/page.py", line 12, in get
+    super(PageHandler, self).render('%s.html' % underscored_page, lang, page)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 78, in render
+    page_keywords = trans.find(page_keywords_key, lang, [])
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/translation.py", line 26, in find
+    result = encode_emails_with_rot13(escape(data))
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/utils/encoding.py", line 19, in escape
+    s = s.replace(item[0], item[1])
+AttributeError: 'list' object has no attribute 'replace'
+18:30:30 -- ERROR -- tornado.application -- Uncaught exception GET /favicon.ico (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/favicon.ico', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 78, in render
+    page_keywords = trans.find(page_keywords_key, lang, [])
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/translation.py", line 26, in find
+    result = encode_emails_with_rot13(escape(data))
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/utils/encoding.py", line 19, in escape
+    s = s.replace(item[0], item[1])
+AttributeError: 'list' object has no attribute 'replace'
+18:31:54 -- ERROR -- tornado.application -- Uncaught exception GET / (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0', 'Upgrade-Insecure-Requests': '1'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/page.py", line 12, in get
+    super(PageHandler, self).render('%s.html' % underscored_page, lang, page)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 78, in render
+    page_keywords = trans.find(page_keywords_key, lang, [])
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/translation.py", line 26, in find
+    result = encode_emails_with_rot13(escape(data))
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/utils/encoding.py", line 19, in escape
+    s = s.replace(item[0], item[1])
+AttributeError: 'list' object has no attribute 'replace'
+18:31:54 -- ERROR -- tornado.application -- Uncaught exception GET /favicon.ico (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/favicon.ico', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 78, in render
+    page_keywords = trans.find(page_keywords_key, lang, [])
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/translation.py", line 26, in find
+    result = encode_emails_with_rot13(escape(data))
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/utils/encoding.py", line 19, in escape
+    s = s.replace(item[0], item[1])
+AttributeError: 'list' object has no attribute 'replace'
+18:31:58 -- ERROR -- tornado.application -- Uncaught exception GET / (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0', 'Upgrade-Insecure-Requests': '1'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/page.py", line 12, in get
+    super(PageHandler, self).render('%s.html' % underscored_page, lang, page)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 78, in render
+    page_keywords = trans.find(page_keywords_key, lang, [])
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/translation.py", line 26, in find
+    result = encode_emails_with_rot13(escape(data))
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/utils/encoding.py", line 19, in escape
+    s = s.replace(item[0], item[1])
+AttributeError: 'list' object has no attribute 'replace'
+18:31:58 -- ERROR -- tornado.application -- Uncaught exception GET /favicon.ico (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/favicon.ico', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 78, in render
+    page_keywords = trans.find(page_keywords_key, lang, [])
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/translation.py", line 26, in find
+    result = encode_emails_with_rot13(escape(data))
+  File "/Users/romahi4/projects/alinafoto/web/server/lib/utils/encoding.py", line 19, in escape
+    s = s.replace(item[0], item[1])
+AttributeError: 'list' object has no attribute 'replace'
+18:34:21 -- ERROR -- tornado.application -- Uncaught exception GET / (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0', 'Upgrade-Insecure-Requests': '1'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/page.py", line 12, in get
+    super(PageHandler, self).render('%s.html' % underscored_page, lang, page)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/page/base/base.html'
+18:34:21 -- ERROR -- tornado.application -- Uncaught exception GET /favicon.ico (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/favicon.ico', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+18:34:46 -- ERROR -- tornado.application -- Uncaught exception GET /02135747/favicon.ico (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/02135747/favicon.ico', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+18:34:47 -- ERROR -- tornado.application -- Uncaught exception GET /02135747/favicon.ico (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/02135747/favicon.ico', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:40 -- ERROR -- tornado.application -- Uncaught exception GET /js/jquery-1.6.1.min.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/jquery-1.6.1.min.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:40 -- ERROR -- tornado.application -- Uncaught exception GET /css/lightview.css (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/css/lightview.css', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': 'text/css,*/*;q=0.1', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:40 -- ERROR -- tornado.application -- Uncaught exception GET /svcore/js/simpleviewer.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/svcore/js/simpleviewer.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:40 -- ERROR -- tornado.application -- Uncaught exception GET /js/lightview.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/lightview.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:41 -- ERROR -- tornado.application -- Uncaught exception GET /js/swfobject-2.2.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/swfobject-2.2.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:41 -- ERROR -- tornado.application -- Uncaught exception GET /js/jquery-ui.min.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/jquery-ui.min.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:41 -- ERROR -- tornado.application -- Uncaught exception GET /02135747/favicon.ico (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/02135747/favicon.ico', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:51 -- ERROR -- tornado.application -- Uncaught exception GET /css/lightview.css (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/css/lightview.css', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': 'text/css,*/*;q=0.1', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:55 -- ERROR -- tornado.application -- Uncaught exception GET /js/jquery-1.6.1.min.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/jquery-1.6.1.min.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:55 -- ERROR -- tornado.application -- Uncaught exception GET /js/jquery-ui.min.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/jquery-ui.min.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:55 -- ERROR -- tornado.application -- Uncaught exception GET /css/lightview.css (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/css/lightview.css', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': 'text/css,*/*;q=0.1', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:55 -- ERROR -- tornado.application -- Uncaught exception GET /svcore/js/simpleviewer.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/svcore/js/simpleviewer.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:55 -- ERROR -- tornado.application -- Uncaught exception GET /js/swfobject-2.2.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/swfobject-2.2.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:56 -- ERROR -- tornado.application -- Uncaught exception GET /js/lightview.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/lightview.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:49:56 -- ERROR -- tornado.application -- Uncaught exception GET /02135747/favicon.ico (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/02135747/favicon.ico', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:50:09 -- ERROR -- tornado.application -- Uncaught exception GET /css/lightview.css (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/css/lightview.css', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Upgrade-Insecure-Requests': '1', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+20:50:10 -- ERROR -- tornado.application -- Uncaught exception GET /favicon.ico (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/favicon.ico', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Referer': 'http://www.alinafotolocal.lv:50220/css/lightview.css', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 131, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 117, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+21:12:09 -- ERROR -- tornado.application -- Uncaught exception GET /js/jquery-1.6.1.min.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/jquery-1.6.1.min.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'If-Modified-Since': 'Sun, 31 May 2015 11:39:39 GMT', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0', 'If-None-Match': '"a34f78c3aecd182144818eb4b7303fda"'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 126, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 112, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+21:12:09 -- ERROR -- tornado.application -- Uncaught exception GET /js/jquery-ui.min.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/jquery-ui.min.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'If-Modified-Since': 'Sun, 31 May 2015 11:39:41 GMT', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0', 'If-None-Match': '"bf7cec23ff0b74006cdf9b3f28004620"'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 126, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 112, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+21:12:09 -- ERROR -- tornado.application -- Uncaught exception GET /js/swfobject-2.2.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/swfobject-2.2.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'If-Modified-Since': 'Sun, 31 May 2015 11:39:45 GMT', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0', 'If-None-Match': '"892a543f3abb54e8ec1ada55be3b0649"'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 126, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 112, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+21:12:09 -- ERROR -- tornado.application -- Uncaught exception GET /svcore/js/simpleviewer.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/svcore/js/simpleviewer.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'If-Modified-Since': 'Sun, 31 May 2015 11:43:19 GMT', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0', 'If-None-Match': '"87841c4a7eebe978068c6cf8ab1db07a"'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 126, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 112, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+21:12:09 -- ERROR -- tornado.application -- Uncaught exception GET /css/lightview.css (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/css/lightview.css', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'If-Modified-Since': 'Sun, 31 May 2015 11:37:42 GMT', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': 'text/css,*/*;q=0.1', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0', 'If-None-Match': '"c9a91fcbc5a14d07081bbd43acba55a4"'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 126, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 112, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+21:12:09 -- ERROR -- tornado.application -- Uncaught exception GET /js/lightview.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/lightview.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'If-Modified-Since': 'Sun, 31 May 2015 11:39:42 GMT', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': '*/*', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://www.alinafotolocal.lv:50220/', 'Cache-Control': 'max-age=0', 'If-None-Match': '"bb606274317c0af85f235942fdbf2a3c"'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 126, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 112, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'
+21:12:14 -- ERROR -- tornado.application -- Uncaught exception GET /js/jquery-1.6.1.min.js (127.0.0.1)
+HTTPServerRequest(protocol='http', host='www.alinafotolocal.lv:50220', method='GET', uri='/js/jquery-1.6.1.min.js', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'en-US,en;q=0.8,ru;q=0.6,lv;q=0.4', 'Accept-Encoding': 'gzip, deflate, sdch', 'Upgrade-Insecure-Requests': '1', 'Host': 'www.alinafotolocal.lv:50220', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36'})
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 1413, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/error.py", line 14, in get
+    self.render_error_404(lang)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 126, in render_error_404
+    self.render('error.html', lang, page='error', status_code=404)
+  File "/Users/romahi4/projects/alinafoto/web/server/apps/frontend/views/base.py", line 112, in render
+    super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 704, in render
+    html = self.render_string(template_name, **kwargs)
+  File "/Library/Python/2.7/site-packages/tornado/web.py", line 808, in render_string
+    t = loader.load(template_name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 371, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 237, in __init__
+    self.code = self._generate_python(loader, compress_whitespace)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 285, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 303, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 343, in load
+    self.templates[name] = self._create_template(name)
+  File "/Library/Python/2.7/site-packages/tornado/template.py", line 370, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: '/Users/romahi4/projects/alinafoto/web/server/templates/frontend/base/base.html'

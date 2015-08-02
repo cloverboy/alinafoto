@@ -7,7 +7,7 @@ PYTHON_EXECUTABLE = 'python'
 DEBUG = True
 
 #----------PATHS----------
-BASE_DOMAIN = 'wyse-media-local.wysegames.com'
+BASE_DOMAIN = 'alinafotolocal.lv'
 MEDIA_DOMAIN = BASE_DOMAIN
 BASE_DOMAIN_PROTOCOL = 'http'
 MEDIA_DOMAIN_PROTOCOL = BASE_DOMAIN_PROTOCOL
@@ -19,33 +19,36 @@ LOG_PATH = os.path.join(BASE_PATH, '../logs')
 TMP_PATH = os.path.join(BASE_PATH, '../tmp')
 
 #----------LANGUAGES----------
-DEFAULT_LANG = 'ru'
+DEFAULT_LANG = 'lv'
 DEFAULT_LANG_ID = 1
-DEFAULT_LOCALE_CODE = 'ru_RU'
+DEFAULT_LOCALE_CODE = 'lv_LV'
 
 LOCALE_LANG_FULL = (
-    (1, 'Russian'),
-    (2, 'English'),
+    (1, 'Latvian'),
+    (2, 'Russian'),
+    (3, 'English'),
 )
 
 LOCALE_LANG_SHORT = (
-    (1, 'ru'),
-    (2, 'en'),
+    (1, 'lv'),
+    (2, 'ru'),
+    (3, 'en'),
 )
 
-LOCALE_LANG_SHORT_ONLY = ['ru', 'en',]
+LOCALE_LANG_SHORT_ONLY = ['lv', 'ru', 'en',]
 
 LOCALE_CODE = (
+    ('lv', 'lv_LV'),
     ('ru', 'ru_RU'),
     ('en', 'en_US'),
 )
 
 #----------FRONTEND----------
-FRONTEND_SERVER_PORTS = [50190, ]
+FRONTEND_SERVER_PORTS = [50220, ]
 
 #----------MANAGER----------
 MANAGER_PUB_ADDRESS = '127.0.0.1'
-MANAGER_PUB_PORT = 50210
+MANAGER_PUB_PORT = 50240
 MANAGER_PROCESSES_CONFIG = []
 
 MANAGER_PROCESSES_CONFIG.extend([
@@ -69,7 +72,7 @@ TIME_ZONE_GMT_OFFSET = 0 # used to generate gmt string for setting a session coo
 
 #----------MAIL----------
 LOGGER_EMAIL_HOST = 'localhost'
-LOGGER_EMAIL = 'wysemediaerrors@gmail.com'
+LOGGER_EMAIL = 'romahi4@gmail.com'
 
 #----------LOGGING----------
 LOGGING = {
@@ -175,4 +178,7 @@ config.dictConfig(LOGGING)
 
 #----------GOOGLE-ANALYTICS----------
 GOOGLE_ANALYTICS_ENABLED = False
-GOOGLE_ANALYTICS_CODE = ''
+GOOGLE_ANALYTICS_TRACK_ID = 'UA-24562738-1'
+
+# ----------FACEBOOK----------
+FACEBOOK_APP_ID = '358611520921796'

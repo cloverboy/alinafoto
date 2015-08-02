@@ -7,7 +7,7 @@ PYTHON_EXECUTABLE = 'python'
 DEBUG = False
 
 #----------PATHS----------
-BASE_DOMAIN = 'www.wysemedia.ru'
+BASE_DOMAIN = 'www.alinafoto.lv'
 MEDIA_DOMAIN = BASE_DOMAIN
 BASE_DOMAIN_PROTOCOL = 'http'
 MEDIA_DOMAIN_PROTOCOL = BASE_DOMAIN_PROTOCOL
@@ -19,29 +19,32 @@ LOG_PATH = os.path.join(BASE_PATH, '../logs')
 TMP_PATH = os.path.join(BASE_PATH, '../tmp')
 
 #----------LANGUAGES----------
-DEFAULT_LANG = 'ru'
+DEFAULT_LANG = 'lv'
 DEFAULT_LANG_ID = 1
-DEFAULT_LOCALE_CODE = 'ru_RU'
+DEFAULT_LOCALE_CODE = 'lv_LV'
 
 LOCALE_LANG_FULL = (
-    (1, 'Russian'),
-    (2, 'English'),
+    (1, 'Latvian'),
+    (2, 'Russian'),
+    (3, 'English'),
 )
 
 LOCALE_LANG_SHORT = (
-    (1, 'ru'),
-    (2, 'en'),
+    (1, 'lv'),
+    (2, 'ru'),
+    (3, 'en'),
 )
 
-LOCALE_LANG_SHORT_ONLY = ['ru', 'en',]
+LOCALE_LANG_SHORT_ONLY = ['lv', 'ru', 'en',]
 
 LOCALE_CODE = (
+    ('lv', 'lv_LV'),
     ('ru', 'ru_RU'),
     ('en', 'en_US'),
 )
 
 #----------FRONTEND----------
-FRONTEND_SERVER_PORTS = [50220, 50221, 50222, 50223, ]
+FRONTEND_SERVER_PORTS = [50220, ]
 
 #----------MANAGER----------
 MANAGER_PUB_ADDRESS = '127.0.0.1'

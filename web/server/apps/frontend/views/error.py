@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Roman Ruskov'
-__date__ = '2014-01-06'
-
 from apps.frontend.views.base import BaseHandler
 
 from settings import DEFAULT_LANG

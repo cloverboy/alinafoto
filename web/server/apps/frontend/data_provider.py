@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Roman Ruskov'
-__date__ = '2014-01-09'
-
 from lib.db import DataProvider
 
 _data_provider = None
 
 
-def get_data_provider(settings={}, *args, **kwargs):
+def get_data_provider(settings, *args, **kwargs):
     global _data_provider
 
     if _data_provider is None:
@@ -19,5 +16,5 @@ def get_data_provider(settings={}, *args, **kwargs):
         else:
             logger_name = None
 
-        _data_provider = DataProvider.getInstance(logger_name=logger_name, *args, **kwargs)
+        _data_provider = DataProvider(logger_name)
     return _data_provider

@@ -1,25 +1,19 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Roman Ruskov'
-__date__ = '2014-01-09'
-
 from tornado.web import UIModule
 
-from apps.frontend.data_provider import get_data_provider
+from lib.utils.locale import get_lang_by_locale_code
+from lib.utils.encoding import html_char_entities
+from lib.translation import Translation
 
-from utils.locale import get_lang_by_locale_code
 
+class TranslationUIModule(UIModule):
 
-class Translation(UIModule):
+    def render(self, key, **kwargs):
+        lang = get_lang_by_locale_code(self.locale.code)
+        result = Translation().find(key, lang)
 
-    def render(self, item, **kwargs):
-        result = self._get_translation(item, self.locale.code)
-        if kwargs.get('obfuscate'):
-            result = self.obfuscate(result)
+        if kwargs.get('html_char_entities'):
+            result = html_char_entities(result)
+
         return result
-
-    def _get_translation(self, item, locale_code):
-        return get_data_provider(self.handler.settings).get('locale_string', item, get_lang_by_locale_code(locale_code))
-
-    def obfuscate(self, item):
-        return ''.join(['&#%s;' % str(ord(char)) for char in item])
