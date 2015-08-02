@@ -1,0 +1,6 @@
+argparse==1.2.1
+distribute==0.6.32
+tornado==4.0.2
+virtualenv==1.10.1
+psutil==1.2.1
+pyzmq==14.0.0

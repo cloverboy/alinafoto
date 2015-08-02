@@ -1,0 +1,79 @@
+{% extends base.html %}
+
+{% block body %}
+    <div id="wrapper">
+        <div class="container">
+
+            <div class="col-7-3">
+
+                {% block col-7 %}
+                    <div class="col-7"></div>
+                {% end %}
+
+                {% block col-3 %}
+                    <div class="col-3 col-3-services">
+                        <h1>{% module _('services_block_h1') %}</h1>
+                        <div class="item-list item-list-vert">
+                            <ul>
+                                <li class="item item-1">
+                                    <a class="img" href="{% module url('social_media_marketing_page', lang) %}">
+                                        <img src="{% module static('img/service_smm.png') %}" alt="{% module _('alt_smm') %}"/>
+                                    </a>
+                                    <div>
+                                        <a href="{% module url('social_media_marketing_page', lang) %}">
+                                            <h2>{% module _('smm') %}</h2>
+                                        </a>
+                                        <p>{% module _('smm_descr_1') %}</p>
+                                    </div>
+                                    <p>{% module _('smm_descr_2') %}</p>
+                                    <a class="link" href="{% module url('social_media_marketing_page', lang) %}">{% module _('btn_more_3') %}</a>
+                                </li>
+                                <li class="item item-2">
+                                    <a class="img" href="{% module url('search_engine_optimisation_page', lang) %}">
+                                        <img src="{% module static('img/service_seo.png') %}" alt="{% module _('alt_seo') %}"/>
+                                    </a>
+                                    <div>
+                                        <a href="{% module url('search_engine_optimisation_page', lang) %}">
+                                            <h2>{% module _('seo') %}</h2>
+                                        </a>
+                                        <p>{% module _('seo_descr_1') %}</p>
+                                    </div>
+                                    <p>{% module _('seo_descr_2') %}</p>
+                                    <a class="link" href="{% module url('search_engine_optimisation_page', lang) %}">{% module _('btn_more_3') %}</a>
+                                </li>
+                                <li class="item item-3">
+                                    <a class="img" href="{% module url('application_development_page', lang) %}">
+                                        <img src="{% module static('img/service_engineering.png') %}" alt="{% module _('alt_engineering') %}"/>
+                                    </a>
+                                    <div>
+                                        <a href="{% module url('application_development_page', lang) %}">
+                                            <h2>{% module _('engineering') %}</h2>
+                                        </a>
+                                        <p>{% module _('engineering_descr_1') %}</p>
+                                    </div>
+                                    <p>{% module _('engineering_descr_2') %}</p>
+                                    <a class="link" href="{% module url('application_development_page', lang) %}">{% module _('btn_more_3') %}</a>
+                                </li>
+                                <li class="item item-4">
+                                    <a class="img" href="{% module url('mobile_promotion_page', lang) %}">
+                                        <img src="{% module static('img/service_mobility.png') %}" alt="{% module _('alt_mobility') %}"/>
+                                    </a>
+                                    <div>
+                                        <a href="{% module url('mobile_promotion_page', lang) %}">
+                                            <h2>{% module _('mobility') %}</h2>
+                                        </a>
+                                        <p>{% module _('mobility_descr_1') %}</p>
+                                    </div>
+                                    <p>{% module _('mobility_descr_2') %}</p>
+                                    <a class="link" href="{% module url('mobile_promotion_page', lang) %}">{% module _('btn_more_3') %}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                {% end %}
+
+            </div>
+
+        </div>
+    </div>
+{% end %}

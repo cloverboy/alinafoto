@@ -1,0 +1,32 @@
+{% extends ../base/col-7-3.html %}
+
+{% block col-7 %}
+    <div class="col-7 col-7-paragraph col-7-news">
+        <h1>{{ news_item['title'] }}</h1>
+        <img src="{% module static('img/%s' % news_item['img_big']) %}" alt="{{ news_item['title'] }}"/>
+        <p>{{ news_item['text'] }}</p>
+    </div>
+{% end %}
+
+{% block col-3 %}
+    <div class="col-3 col-3-news">
+        <h1>{% module _('news_block_h1') %}</h1>
+        <div class="item-list item-list-vert">
+            <ul>
+                {% for item in items %}
+                    <li>
+                        <div>
+                            <a href="{% module url('news_item_page', lang, item['item_id']) %}">
+                                <h2>{{ item['title'] }}</h2>
+                            </a>
+                            <p>{{ item['descr_short'] }}</p>
+                        </div>
+                        <a class="link" href="{% module url('news_item_page', lang, item['item_id']) %}">
+                            {% module _('btn_more_3') %}
+                        </a>
+                    </li>
+                {% end %}
+            </ul>
+        </div>
+    </div>
+{% end %}

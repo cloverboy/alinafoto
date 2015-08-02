@@ -1,0 +1,923 @@
+#===================================
+#    Deploy strategy
+#===================================
+
+#---------------------
+# Operating System
+    Ubuntu Server 12.04.3 LTS 64-bit
+
+#---------------------
+# Server software
+    python 2.7.5
+    nginx 1.4.1
+
+#---------------------
+# Install ubuntu packages
+    sudo aptitude install python2.7
+    sudo aptitude install python-dev
+    sudo aptitude install python-all
+    sudo aptitude install python-setuptools
+    sudo aptitude install python-pip
+    sudo aptitude install build-essential
+    sudo aptitude install sendmail (or postfix)
+    sudo aptitude install nginx
+    sudo aptitude install openssh-server
+    sudo aptitude install subversion
+    sudo aptitude install git
+    sudo aptitude install tmux
+    sudo aptitude install htop
+    sudo aptitude install curl
+    sudo aptitude install logrotate
+    sudo aptitude install mutt
+    sudo pip isntall distribute
+    sudo pip install virtualenv
+
+    if you have problems with setup-tools
+        cd /tmp
+        wget http://peak.telecommunity.com/dist/ez_setup.py
+        python ez_setup.py
+
+#---------------------
+# Make svn checkout, use virtualenv, start servers
+    cd /home/
+    sudo mkdir wyse_media
+
+    cd  /home/roman/
+    sudo mkdir wyse_media
+    sudo mkdir virtualenv
+
+    sudo svn co --username r.ruskov https://svn.wysegames.com/svn/wyse_media/trunk wyse_media
+    sudo adduser --no-create-home --disabled-login wyse_media
+
+    sudo chown -R wyse_media:wyse_media /home/roman/wyse_media/
+    sudo mkdir /home/roman/virtualenv/wyse_media/
+    sudo chown -R wyse_media:wyse_media /home/wyse_media/
+    sudo chown -R wyse_media:wyse_media /home/roman/virtualenv/wyse_media/
+    sudo chmod -R 775 /home/roman/wyse_media/
+
+    sudo su wyse_media
+    cd /home/roman/wyse_media/
+
+    virtualenv --no-site-packages --python=python2.7 ../virtualenv/wyse_media/
+    source ../virtualenv/wyse_media/bin/activate
+
+    pip install -r web/server/requirements.txt
+
+    cd web/server/launcher/production/
+    chmod -R +x *.sh
+
+    # see current tmux sessions
+    tmux ls
+
+    # attach to session if it already exists
+    tmux a -t wyse_media
+
+    # create new tmux session
+    tmux new -s wyse_media
+
+    # if you have made a mistake then remove session
+    tmux kill-session -t wyse_media
+
+    # all actions in tmux are made by pressing Ctrl+b, releasing and
+    # pressing some command-key
+
+    # split session to 3 panes
+    Ctrl+b  "  vertical split
+    Ctrl+b  %  horizontal split
+
+    # resize pane
+    Ctrl+b Ctrl + arrow left/right/top/bottom
+
+    # kill pane
+    Ctrl+b x
+
+    # switch between panes
+    Ctrl+b  arrow left/right/top/bottom
+
+    # switch between windows
+    Ctrl+b 0/1
+
+    # open first pane and launch server
+    source /home/roman/virtualenv/wyse_media/bin/activate
+    ./start_server.sh
+
+    # open second pane and check logs
+    tail -f /home/roman/wyse_media/web/logs/server.log
+
+    # open third pane and check memory load
+    htop
+    F6 --> Mem%
+    F5
+    F4 --> wyse_media
+
+    # for graceful server stop
+    htop
+    F4 --> wyse_media
+           select manager/server.py
+    F9 (kill) --> SIGTERM (15)
+
+    # alternatively use Ctrl+C or sudo kill -s 15 12345 in tmux pane
+    # 12345 = pid of manager
+
+    # you can use preconfigured tmux scripts in launcher/production/tmux/
+    # initial server start
+    ./start.sh
+
+    # send SIGTERM to manager
+    ./stop.sh
+
+    # view startup
+    ./view_startup.sh
+
+    # view logs
+    ./view_logs.sh
+
+    # kill tmux session
+    ./kill.sh
+
+    # exit from tmux by pressing
+    Ctrl+b D
+
+    # logout from wyse_play user by pressing
+    Ctrl+D
+
+    # logout from wyse_media user by pressing Ctrl+D
+
+    # open nginx folder
+    cd /etc/nginx/sites-enabled
+    sudo ln -s /home/roman/wyse_media/web/server/launcher/production/nginx_vhost.conf wysemedia.ru
+    sudo /etc/init.d/nginx reload
+
+#---------------------
+# Configure logrotate
+    # create symbolic link
+    sudo ln -s /home/roman/wyse_media/web/server/launcher/production/logrotate.conf /etc/logrotate.d/wyse_media_production
+    sudo chmod 644 /etc/logrotate.d/wyse_media_production
+
+    # test
+    logrotate --force --verbose --debug /etc/logrotate.d/wyse_media_production
+
+#---------------------
+# Local development
+    sudo nano /etc/hosts
+    append >>
+    127.0.0.1 wyse-media-local.wysegames.com
+
+    restart networking
+    sudo ifconfig eth0 down
+    sudo ifconfig eth0 up
+
+#---------------------
+# Install new fonts for local development
+    # install windows fonts by calling
+    sudo aptitude install ttf-mscorefonts-installer
+
+    # find fonts in Art/Fonts/
+    # copy ttf files of: Meslo, Inconsolata
+    # to: /home/roman/.fonts/
+
+    # clear font cache by calling
+    sudo fc-cache -f -v
+
+#---------------------
+# PyCharm theme
+    File --> Import Settings
+    /home/roman/projects/wyse_media/trunk/web/editor_style_and_settings/settings.jar
+
+    File --> Settings
+    --> Apperance
+    Theme: Darcula
+    Override default fonts by: Meslo LG M Regular 12
+
+    --> Editor --> Colors & Fonts --> Font
+    Scheme name: Roman_latest (or Tomorrow Night)
+    Size: 13
+    Line spacing: 1.0
+    Selected fonts: Meslo LG M Regular
+
+#---------------------
+# Configure less and minify
+    # install nodejs
+    sudo aptitude install nodejs
+    sudo aptitude install npm
+
+    # if you have problems with npm
+    sudo aptitude remove nodejs
+    sudo add-apt-repository ppa:chris-lea/node.js
+    sudo aptitude update
+    sudo aptitude -y dist-upgrade
+    sudo aptitude install nodejs
+    sudo aptitude install npm
+
+    # LESS (-g = globally)
+    sudo npm install -g less
+
+    # clean css
+    sudo npm install -g clean-css
+
+    # google closure
+    sudo npm install -g closure-compiler
+
+    # Configure PyCharm
+    # open File -> Settings -> File Watchers
+
+    # add "LESS" File Watcher
+    # Name = app.less to app.css
+    # Scope = Project Files
+    # Program = /usr/lib/node_modules/less/bin/lessc
+    # Arguments = --no-color $FileName$
+    # Working directory = $FileDir$
+    # Output paths to refresh = $FileNameWithoutExtension$.css
+
+    # add "Custom" File Watcher
+    # Name = app.css to app.min.css
+    # Scope = Project Files
+    # Program = /usr/lib/node_modules/clean-css/bin/cleancss
+    # Arguments = -o $FileNameWithoutExtension$.min.css $FileName$
+    # Working directory = $FileDir$
+    # Output paths to refresh = $FileNameWithoutExtension$.min.css
+
+    # add "Closure Compiler" File Watcher
+    # Name = app.js to app.min.js
+    # Scope = Project Files
+    # Program = /usr/lib/node_modules/closure-compiler/lib/vendor/compiler.jar
+    # Arguments = --compilation_level SIMPLE_OPTIMIZATIONS --js $FileName$
+    # Working directory = $FileDir$
+    # Output paths to refresh = $FileNameWithoutExtension$.min.js
+
+#---------------------
+# Test your server
+
+    #------
+    # httperf - HTTP performance measurement tool
+    # sudo aptitude install httperf
+    # create 100,000 sessions, at a rate of 1,000 per second.
+    # each session makes 5 calls, which are spread out by 2 seconds
+    httperf --hog --server=www.wysemedia.ru --wsess=100000,5,2 --rate 1000 --timeout 5
+
+    # a total of 100,000 connections created, and the connections are created at a fixed rate of 20,000 per second
+    httperf --hog --server www.wysemedia.ru --num-conn 100000 --ra 20000 --timeout 5
+
+    # num-call - number of HTTP requests per connection (> 1 for keep-alives)
+    # num-conn - total number of connections to create
+    # rate - number of connections to start per second
+    httperf --server=127.0.0.1 --port=8080 --rate=100 --num-conns=100 --num-calls=100000 --timeout=5 --hog --uri=/100.html
+
+    #------
+    # wrk - a HTTP benchmarking tool
+    # cd /tmp
+    # wget https://github.com/wg/wrk/archive/master.zip
+    # unzip master.zip
+    # cd wrk-master
+    # make
+    # ./wrk
+    # Next cmd runs a benchmark for 30 seconds, using 12 threads, and keeping 400 HTTP connections open.
+    wrk -t12 -c400 -d30s http://127.0.0.1:8080/index.html
+    wrk -c 100 -r 300000 http://127.0.0.1:8080/index.html
+
+    #------
+    # ab - Apache HTTP server benchmarking tool
+    # sudo aptitude install apache2-utils
+    # n - total count of requests
+    # c - concurent (not less all the time) request count
+    # t - sec to wait and make conection timed out
+    # r - don't exit on socket receive errors.
+    ab -n 10000 -c 1000 -t 4 www.wysemedia.ru
+
+    # python ./bench.py
+    import subprocess
+    for c in [1, 5, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300]:
+       subprocess.call(["/usr/bin/ab", "-n", "10000", "-c", "%s" % (c), "www.wysemedia.ru"])
+
+    # ./bench.sh
+    for i in `seq 0 3`;do
+     taskset -c $i ab -k -c 50 -n 1000000 'http://127.0.0.1/100.html' | grep '(mean)' &> $i.log &
+    done
+
+    #------
+    # siege - An HTTP/HTTPS stress tester
+    # sudo aptitude install siege
+    # d - delay in sec for each request
+    # c - concurent (not less all the time) request count
+    # r - repeat count
+    siege www.wysemedia.ru -d4 -r1000 -c100
+
+#---------------------
+# Nginx tuning
+    /etc/nginx/nginx.conf
+
+    # This number should be, at maximum, the number of CPU cores on your system minus one.
+    # (since nginx doesn't benefit from more than one worker per CPU.)
+    worker_processes 7;
+
+    # Number of file descriptors used for Nginx. This is set in the OS with 'ulimit -n 65535'
+    # or using /etc/security/limits.conf
+    worker_rlimit_nofile 65535;
+
+    # only log critical errors
+    error_log /var/log/nginx/error.log crit
+
+    # Determines how many clients will be served by each worker process.
+    # (Max clients = worker_connections * worker_processes)
+    # "Max clients" is also limited by the number of socket connections available on the system (~64k)
+    events {
+      worker_connections 4096;
+      use epoll;
+      multi_accept on;
+    }
+
+    # essential for linux, optmized to serve many clients with each thread
+    use epoll;
+
+    # Accept as many connections as possible, after nginx gets notification about a new connection.
+    # May flood worker_connections, if that option is set too low.
+    multi_accept on;
+
+    # hide nginx version signature
+    server_tokens off;
+
+    # Caches information about open FDs, freqently accessed files.
+    # Changing this setting, in my environment, brought performance up from 560k req/sec, to 904k req/sec.
+    # I recommend using some varient of these options, though not the specific values listed below.
+    open_file_cache max=200000 inactive=20s;
+    open_file_cache_valid 30s;
+    open_file_cache_min_uses 2;
+    open_file_cache_errors on;
+
+    # Buffer log writes to speed up IO, or disable them altogether
+    # access_log /var/log/nginx/access.log main buffer=16k;
+    access_log off;
+
+    # Sendfile copies data between one FD and other from within the kernel.
+    # More efficient than read() + write(), since the requires transferring data to and from the user space.
+    sendfile on;
+
+    # Tcp_nopush causes nginx to attempt to send its HTTP response head in one packet,
+    # instead of using partial frames. This is useful for prepending headers before calling sendfile,
+    # or for throughput optimization.
+    tcp_nopush on;
+
+    # don't buffer data-sends (disable Nagle algorithm). Good for sending frequent small bursts of data in real time.
+    tcp_nodelay on;
+
+    # Timeout for keep-alive connections. Server will close connections after this time.
+    keepalive_timeout 30;
+
+    # Number of requests a client can make over the keep-alive connection. This is set high for testing.
+    keepalive_requests 100000;
+
+    # allow the server to close the connection after a client stops responding. Frees up socket-associated memory.
+    reset_timedout_connection on;
+
+    # send the client a "request timed out" if the body is not loaded by this time. Default 60.
+    client_body_timeout 10;
+
+    # If the client stops reading data, free up the stale client connection after this much time. Default 60.
+    send_timeout 2;
+
+    # Compression. Reduces the amount of data that needs to be transferred over the network
+    # Don't gzip images. JPEG and PNG files are already compressed and re-compressing them with
+    # gzip may have little effect, and it may in fact result in larger file sizes. By default,
+    # nginx doesn't compress image files using its per-request gzip module.
+    gzip on;
+    gzip_min_length 10240;
+    gzip_comp_level 6;
+    gzip_http_version 1.1;
+    gzip_vary on;
+    gzip_proxied expired no-cache no-store private auth;
+    gzip_types text/plain text/css text/xml text/javascript application/x-javascript application/xml;
+    gzip_disable "MSIE [1-6]\.";
+
+    # nginx gzip module types
+    # http_gzip_module - allows to compress text data on the fly
+    # http_gzip_static_module - will search for a .gz file near the original file
+    # you will need to create files by yourself
+
+    # Check that nginx is compiled with http_gzip_module
+    2>&1 nginx -V | tr -- - '\n' | grep _module
+
+    # How to compile nginx from sources
+    cd /usr/share/
+    wget http://nginx.org/download/nginx-1.5.8.tar.gz
+    tar -zxvf nginx-1.5.8.tar.gz
+    mkdir nginx
+    mv -f nginx-1.5.8/* nginx
+    rm -rf nginx-1.5.8*
+    cd nginx
+    NGINX_SRC_DIR=`pwd`
+
+    ./configure \
+      --prefix=/usr/local \
+      --sbin-path=/usr/local/sbin \
+      --conf-path=/etc/nginx/nginx.conf \
+      --error-log-path=/var/log/nginx/error.log \
+      --http-log-path=/var/log/nginx/access.log \
+      --with-http_ssl_module \
+      --with-http_gzip_static_module \
+      --with-http_gzip_module \
+      --with-http_sub_module
+      --with-http_addition_module
+      --with-http_dav_module
+      --with-http_geoip_module
+      --with-http_image_filter_module
+      --with-http_realip_module
+      --with-http_stub_status_module
+      --with-http_xslt_module
+
+    make
+    make install
+
+    # test nginx config
+    sudo nginx -t
+
+    # start daemon
+    /etc/init.d/nginx start
+
+    # Check that nginx is searching for gzipped files
+    gzip *.jpg static/img/*
+    ps aux | grep nginx
+    root            4602  0.0  0.0  37788  1668 ?        Ss   11:30   0:00 nginx: master process /usr/sbin/nginx
+    www-data  4603  0.0  0.0  38064  2860 ?        S<   11:30   0:00 nginx: worker process
+    strace -p 4602 -p 4603 2>&1 | grep gz
+    [pid  4602] open("/home/roman/wyse_media/web/static/img/somebigfile.jpg.gz", O_RDONLY|O_NONBLOCK) = -1 ENOENT (No such file or directory)
+
+    # Check that upstream returns content in GZip
+    curl -i -H "Accept-Encoding: gzip" "127.0.0.1:50280" >> /tmp/gzip_test.txt
+
+    # Enable static file cache
+    location ~* \.(gif|jpg|png|ico|css|js|html|htm|swf|xml|txt|svg|pdf|xls|xlsx|doc|docx)$ {
+        root /home/roman/projects/wyse_media/trunk/web/static;
+        expires 30d;
+        add_header Cache-Control "public, no-transform, must-revalidate";
+        add_header Last-Modified $date_gmt;
+        keepalive_timeout 5;
+        access_log off;
+    }
+
+    # Disable static file cache
+    location ~* \.(gif|jpg|png|ico|css|js|html|htm|swf|xml|txt|svg|pdf|xls|xlsx|doc|docx)$ {
+        root /home/roman/projects/wyse_media/trunk/web/static;
+        expires off;
+        add_header  Cache-Control no-cache;
+        keepalive_timeout 5;
+        access_log off;
+    }
+
+    # redirect from http://media.wysemedia.ru/img/09134261/icon_sprite.png
+    # to http://media.wysemedia.ru/img/icon_sprite.png
+    location ~* "(.*)/([0-9]{8})/(.*)$" {
+        try_files $uri $1/$3;
+    }
+
+#---------------------
+# Ubuntu tuning
+    # look at current loaded values
+    sysctl -a
+
+    # make a backup
+    sudo sysctl -a > ./sysctl.orig
+    sudo cat /etc/sysctl.conf > ./sysctl.conf.orig
+
+    # by default TCP/IP release a closed connection after 60 seconds
+    echo "10" > /proc/sys/net/ipv4/tcp_fin_timeout
+
+    # default time between isAlive interval probes 75
+    echo "15" > /proc/sys/net/ipv4/tcp_keepalive_intvl
+
+    # default tcp_keepalive_time 7200
+    echo "300" > /proc/sys/net/ipv4/tcp_keepalive_time
+
+    echo "262144" > /proc/sys/net/netfilter/nf_conntrack_max
+    echo "1" > /proc/sys/net/ipv4/tcp_tw_recycle
+    echo "1" > /proc/sys/net/ipv4/tcp_tw_reuse
+
+    sudo sysctl -a | grep somaxconn
+    sudo nano /etc/sysctl.conf
+
+    # Increase system IP port limits to allow for more connections
+    net.ipv4.ip_local_port_range = 2048 64512
+    net.ipv4.tcp_window_scaling = 1
+
+    # number of packets to keep in backlog before the kernel starts dropping them
+    net.ipv4.tcp_max_syn_backlog = 4096
+
+    # increase socket listen backlog
+    net.core.netdev_max_backlog = 10000
+
+    # Max count of sockets waiting for connection
+    net.core.somaxconn= 16384
+
+    net.ipv4.conf.all.accept_redirects = 0
+    net.ipv4.tcp_max_orphans = 65536
+    net.ipv4.tcp_orphan_retries = 1
+    net.ipv4.tcp_keepalive_probes = 5
+    net.ipv4.tcp_synack_retries = 1
+    net.ipv4.tcp_syncookies = 1
+
+    # increase TCP buffer sizes
+    net.core.rmem_default = 8388608
+    net.core.rmem_max = 16777216
+    net.core.wmem_max = 16777216
+    net.ipv4.tcp_rmem = 4096 87380 16777216
+    net.ipv4.tcp_wmem = 4096 65536 16777216
+    net.ipv4.tcp_congestion_control = cubic
+
+    # maximum number of open file descriptors
+    fs.file-max=100000
+
+    sudo sysctl -p /etc/sysctl.conf
+    sudo sysctl -a | grep somaxconn
+
+    # each user has a maximum number of files they can hold open. (everything in linux is a file)
+    # so tcp connections are filesâ€¦ everything type lsof if you want to see which files are open on your system
+
+    # check open files
+    sudo lsof -u wyse_media | wc -l
+
+    # check open file limit
+    su wyse_media -c 'ulimit -n'
+
+    # check open files per process ($PID)
+    ls /proc/$(pidof mysqld)/fd/ | wc -l
+
+    # to check and modify limits per shell, use the following command:
+    ulimit -a
+
+    # the output will look something like this:
+    core file size          (blocks, -c) 0
+    data seg size           (kbytes, -d) unlimited
+    scheduling priority             (-e) 0
+    file size               (blocks, -f) unlimited
+    pending signals                 (-i) 30546
+    max locked memory       (kbytes, -l) 64
+    max memory size         (kbytes, -m) unlimited
+    open files                      (-n) 1024
+    pipe size            (512 bytes, -p) 8
+    POSIX message queues     (bytes, -q) 819200
+    real-time priority              (-r) 0
+    stack size              (kbytes, -s) 8192
+    cpu time               (seconds, -t) unlimited
+    max user processes              (-u) 30546
+    virtual memory          (kbytes, -v) unlimited
+    file locks                      (-x) unlimited
+
+    # By default the hard limit (ulimit -n --> open files) is 1024,
+    # this is to ensure that one user does not take up all the resources of a machine.
+    # However a load balancer is a single puprpose machine, and its acceptable that
+    # it take all the resources.
+
+    # The openfiles and descriptors show a limit of 1024. To increase the
+    # limit to 65535 for all users, edit /etc/security/limits.conf as root,
+    # and modify or add the nofile setting (number of file) entries:
+
+    *         soft    nofile                     65535
+    *         hard    nofile                     65535
+
+    # The character â€œ*â€ is a wildcard that identifies all users.
+    # You could also specify a user ID instead.
+    # user must re log in for new values to take effect
+
+    # For the startup script method to work you must modify /etc/pam.d/su adding this line
+    session required pam_limits.so
+
+#---------------------
+# Freebsd 8.3 tuning
+
+    # if you are using uwsgi or getting errors like
+    uwsgi_lock_ipcsem_init()/semget(): No space left on device [core/lock.c line 507]
+    uwsgi_ipcsem_clear()/semctl(): Invalid argument [core/lock.c line 631]
+
+    # then you need to increase Number of semaphore identifiers
+    # because by default, kern.ipc.semmni = 10 and uwsgi uses 8 semaphores
+    sudo nano /boot/loader.conf
+
+    # Number of semaphore identifiers
+    kern.ipc.semmni=64
+
+    # Maximum number of semaphores in the system
+    kern.ipc.semmns=128
+
+    # Maximum number of undo structures in the system
+    kern.ipc.semmnu=128
+
+    # restart server
+    sudo reboot
+
+    # FreeBSD stores the network data in the mbuf clusters 2Kb each,
+    # but only 1500B are used in each cluster (the size of the Ethernet packet)
+    # for each mbuf cluster there is â€œmbufâ€ structure needed, which have 256B
+    # in size and used to organize mbuf clusters in chains. Thereâ€™s possibility
+    # to store some additional useful 100B data into the mbuf, but it is not always used.
+    # if server have the RAM of 1Gb or more 25 thousands of mbuf clusters will be
+    # created by default but it is not enough in some cases.
+    # when thereâ€™s no any free mbuf clusters available FreeBSD enters the zonelimit
+    # state and stops to answer to any network requests. You can see it as the 'zoneli'
+    # state in the output of the `top` command.
+    # to fix this problem the only solution is to log in through the local console and
+    # reboot the system. It is impossible to kill the process in `zoneli` state.
+    # This problem is also actual for Linux 2.6.x but even local console will not work
+    # in this state for Linux. The state of used mbuf clusters can be checked by the following command:
+    > netstat -m
+    1/1421/1425 mbufs in use (current/cache/total)
+    0/614/614/25600 mbufs clusters in use (current/cache/total/max)
+
+    # You can increase quantity of the mbufs clusters through the kern.ipc.nmbclusters parameter:
+    > sysctl kern.ipc.nmbclusters=65536
+
+    # For earlier versions of FreeBSD mbuf clusters can be configured only in boot time:
+    /boot/loader.conf:
+    kern.ipc.mbclusters=65536
+
+    # 25000 mbuf clusters takes about a 50Mb in the memory, 32000 â€“ 74Mb, 65000 â€“ 144 Mb
+    # (raises by the power of 2). 65000 is the boundary value and I canâ€™t recommend
+    # to exceed it without increasing address space of the kernel first.
+
+    # Thereâ€™s approximately 100 bytes needed to serve one single connection.
+    # Approximatelly 100 bytes space is used for single unfinished connection in syncache.
+    # Thereâ€™s possibility to store information about 15000 connections in memory. Approximately.
+    # Snyncache parameters can bee seen by â€œsysctl net.inet.tcp.syncacheâ€ command (read-only).
+    # Syncache parameters can be changed only during boot time:
+    /boot/loader.conf:
+    net.inet.tcp.syncache.hashsize=1024
+    net.inet.tcp.syncache.bucketlimit=100
+
+    # when the new connection does not fit into overfull syncache FreeBSD enters the
+    # `syncookies` state (TCP SYN cookies). This possibility is enabled with:
+    sysctl net.inet.tcp.syncookies=1
+
+    # The syncache population and the syncookies stats can be seen with `ntestat -s -p tcp` command.
+    # When the connection is accepted it comes to the â€œlisten socket queueâ€
+    # Theirâ€™s stats can be seen with the `netstat -Lan` command.
+
+    # Inreasing of the queue is possible with the `sysctl kern.ipc.somaxconn=4096` command
+    # When the connection is accepted FreeBSD creates the sockets structures.
+
+    # To increase the limit of the open sockets:
+    sysctl kern.ipc.maxsockets=204800
+
+    # In earlier versions:
+    /boot/loader.conf:
+    kern.ipc.maxsockets=204800
+
+    # The current state can be seen with the following command:
+    > vmstat -z
+
+    # If the server processes several tens of thousands connections the tcb hash allows to
+    # detect the target connection for each incoming tcp packet quickly.
+    # The tcb hash is 512 bytes by default.
+
+    # The current size can be seen with:
+    sysctl net.inet.tcp.tcbhashsize
+
+    # It is changeable in the boot time:
+    /boot/loader.conf:|
+    sysctl net.inet.tcp.tcbhashsize=4096
+
+    # Applicatios are working not with the sockets but with files. And thereâ€™s file
+    # descriptor needed for each socket because of that. To increase:
+    sysctl kern.maxfiles=204800
+    sysctl kern.maxfilesperproc=200000
+
+    # These options can be changed on the live system but they will not affect already
+    # running processes. nginx have the ability to change the open files limit on the fly:
+    nginx.conf:
+    worker_limit_nofile 200000;
+    events {
+    worker_connections 200000;
+    }
+
+    # Buffers for incoming data. 64Kb by default, if thereâ€™s no large uploads can
+    # be decreased to 8Kb (decreases the probability of overflow during a DDoS attack):
+    sysctl net.inet.tcp.recvspace=8192
+
+    # For nginx:
+    nginx.conf:
+    listen 80 default rcvbuf=8k;
+
+    # Buffers for outgoing data. 32K by default. If data have a small size usually
+    # or thereâ€™s a lack of mbuf clusters it may be decreased:
+    sysctl net.inet.tcp.sendspace=16384
+
+    # For nginx:
+    nginx.conf:
+    listen 80 default sendbuf=16k;
+
+    # In the case when server has written some data to the socket but the
+    # client do not want to receive it the data will live in the kernel for several
+    # minutes even after the connection will be closed by timeout. Nginx have the
+    # option to erase all data after the timeout:
+    nginx.conf:
+    reset_timedout_connections on;
+
+    # Another way to save some mbuf clusters is the sendfile. It uses the kernel file
+    # buffers memory to send the data to the network interface without any intermediate buffers usage.
+    # To enable in nginx:
+    nginx.conf:
+    sendfile on;
+
+    # (you should explicitly switch it off if youâ€™re sending files from the partition mounted via smbfs or cifs â€“ ReRePi)
+    # On the i386 platform with 1Gb and more memory 6656 sendfile buffers will be allocated which is
+    # usually enough. On the amd64 platform more optimal implementation is used and thereâ€™s no need in sendbufs at all.
+
+    # On the sendbuf overflow the process stucks in the `sfbufa` state, but things turns ok after the buffer size is increased:
+    /boot/loader.conf:
+    kern.ipc.nsfbufs=10240
+
+    # After the connection was closed the socket enters the TIME_WAIT state. In this state it can live for 60
+    # seconds by default. This time can be changed with sysctl (in milliseconds divided by 2. 2Ã—30000 MSL = 60 seconds):
+    sysctl net.inet.tcp.msl=30000
+
+    # Outgoing connection are bind to the ports from the 49152 â€“ 65535 range (16 thousands).
+    # It is better to be increased (1024 â€“ 65535):
+    sysctl net.inet.ip.portrange.first=1024
+    sysctl net.inet.ip.portrange.last=65535
+
+    # To use ports in natural order instead of random (to make the second connection for the same
+    # port impossible before TIME_WAIT):
+    sysctl net.inet.ip.portrange.randomized=0
+
+    # In FreeBSD 6.2 the possibility to not create TIME_WAIT state for localhost connections was added:
+    sysctl net.inet.tcp.nolocaltimewait=1
+
+#---------------------
+# FreeBSD 8.3 deploy instructions
+    # package manager
+    # pkg_add, pkg_create, pkg_deinstall, pkg_delete, pkg_info
+    pkg_add -r nginx
+
+    # installation and configuration tool
+    sudo sysinstall
+
+    # see installed package versions
+    pkg_version -v
+
+    # update freebsd tree
+    sudo portsnap fetch extract
+
+    # search for package bin folder
+    whereis mongo
+
+    # install svn
+    cd /usr/ports/devel/subversion
+    sudo make install clean
+
+    # install virtualenv
+    cd /usr/ports/devel/py-virtualenv
+    sudo make install clean
+
+    # install tmux
+    cd /usr/ports/devel/libevent/
+    sudo make install clean
+
+    cd /usr/ports/devel/libevent2/
+    sudo make install clean
+
+    cd /usr/ports/sysutils/tmux/
+    sudo make install clean
+
+    # check tmux version (1.9a)
+    tmux -V
+
+    # if you get something like
+    protocol version mismatch (client 8, server 6)
+
+    # open htop, locate correct owner tmux process and send SIGTERM
+    F4 --> tmux
+    F9 --> 15
+
+    # install pyzmq
+    cd /usr/ports/devel/py-pyzmq/
+    sudo make install clean
+
+    # add user
+    sudo pw adduser wyse_media -s /usr/sbin/nologin -c "wyse media web user without login rights"
+
+    # allow to login in bash
+    sudo chsh -s /usr/local/bin/bash wyse_media
+
+    # install nginx it its not installed yet
+    cd /usr/ports/www/nginx
+    sudo make install clean
+
+    # the other way to install nginx is from the Packages Manager:
+    pkg_add -r nginx
+
+    # enable nginx
+    echo 'nginx_enable="YES"' >> /etc/rc.conf
+
+    # install symbolic link to nginx
+    cd /usr/local/etc/nginx/sites
+
+    # start nginx
+    sudo /usr/local/etc/rc.d/nginx start
+
+    # reload nginx
+    sudo /usr/local/etc/rc.d/nginx reload
+
+    # nginx folders
+    nginx default configuration file: /usr/local/etc/nginx/nginx.conf
+    nginx default http / https port: 80 / 443
+    nginx default error log file: /var/log/nginx-error.log
+    nginx default access log file: /var/log/nginx-access.log
+    nginx default DocumentRoot: /usr/local/www/nginx/
+
+    # install mongodb
+    cd /usr/ports/databases/mongodb/
+    sudo make install clean
+
+    # upgrade mongo db
+    cd /usr/ports/ports-mgmt
+    sudo portupgrade mongodb
+
+    # install nano
+    cd /usr/ports/editors/nano
+    sudo make install clean
+
+    # install mutt - mail transport agent
+    cd /usr/ports/mail/mutt
+    sudo make install clean
+
+    # install openssl
+    cd /usr/ports/security/openssl
+    sudo make -DWITH_OPENSSL_PORT install
+
+    # or in another way
+    sudo portsnap fetch update
+
+    # add the following line to /etc/make.conf
+    WITH_OPENSSL_PORT=yes
+
+    # now install the OpenSSL port from /usr/ports/security/openssl or if you like to use portupgrade
+    portupgrade -N security/openssl
+
+    # and that's about it, due to the additional line in make.conf any port built with OpenSSL
+    # will use the port (latest) version. You may need to recompile other packages using OpenSSL,
+    # in that case this command could help out
+    portupgrade -Rrf security/openssl
+
+    # cron
+    sudo crontab -e -u wyse_media
+
+    # or login with
+    sudo su wyse_media
+    crontab -e
+
+    MAILTO=wysemediabackups@gmail.com
+
+    # backup every 12 hours
+    0 */12 * * * /home/roman/wyse_media/web/server/launcher/production/backup.sh
+
+    # vim hotkeys
+    # for insert mode press i
+    # to delete symbols press x
+    # A to add text after cursor
+    # dd to delete a line
+    # O like press Enter before line
+    # to add a line after text press Esc, A, Esc, o
+    # to save press Esc and
+    # :q to quit
+    # :q! to quit without saving
+    # :wq to write and quit
+    # :qa to quit all
+
+    # install logrotate
+    # logrotate is the same as newsyslog
+    sudo nano/etc/newsyslog.conf
+
+    # append line
+    /home/roman/wyse_media/web/logs/*.log  wyse_media:wyse_media  644  7  5000  *  ZG
+
+    # run this to check everything is set up ok:
+    sudo newsyslog -v
+
+    # newsyslog docs
+    http://www.freebsd.org/cgi/man.cgi?query=newsyslog.conf&sektion=5
+
+    # newsyslog example
+    /home/backup/httpd-access.log 644 4 * @T00 B /var/run/httpd.pid 30
+
+    # newsyslog params
+    644 â€“ mode- this is the permission (chmod) of the log files
+    4 â€“ count- newsyslog will keep 4 previous copies of the log files
+    * â€“ size â€“ Donâ€™t rotate log file on size of of log (5000 = 5000 KB).
+    @T00 â€“ when â€“ rotate log file everyday at 0 Hours.
+    B -
+    /var/run/httpd.pid â€“ is pid file, is used if newsyslog need to restart service
+    30 â€“ Is signal number of gracefull restart of apache
+
+    # newsyslog running time
+    $D0 rotate every night at midnight (same as @T00)
+    $D23 rotate every day at 23:00 (same as @T23)
+    $W0D23 rotate every week on Sunday at 23:00
+    $W5D16 rotate every week on Friday at 16:00
+    $M1D0 rotate at the first day of every month at midnight (i.e., the start of the day; same as @01T00)
+    $M5D6 rotate on every 5th day of month at 6:00 (same as @05T06)
+
+    # newsyslog flags
+    B  indicates that the log file is a binary file
+    C  indicates that the log file should be created if it does not already exist
+    G  indicates that the specified logfile_name is a shell pat-
+       tern, and that newsyslog should archive all filenames
+       matching that pattern using the other options on this line
+    Z indicates that newsyslog(8) should attempt to save disk
+      space by compressing the rotated log file using gzip.
