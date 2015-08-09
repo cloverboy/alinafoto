@@ -14,6 +14,7 @@ handlers = [
     (r'[\/]?$', PageHandler),
     (r'%s[\/]?$' % LANGS, PageHandler),
     (r'%s/%s[\/]?$' % (LANGS, PAGE_HANDLER_PAGES), PageHandler),
+    (r'%s/guestbook[\/]?$' % LANGS, PageHandler),
     (r'/ping-pong[\/]?$', PingPongHandler),
     (r'/(.*\.(gif|jpg|jpeg|png|ico|js|css|html|swf|xml|txt))$', StaticFileHandler, {'path': STATIC_PATH}),
     (r'%s/(.*)$' % LANGS, ErrorHandler),

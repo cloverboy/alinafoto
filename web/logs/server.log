@@ -1284,3 +1284,197 @@
 2015-08-02 21:21:21 -- INFO  -- frontend-server-50220          -- launched in local environment
 2015-08-02 21:21:21 -- INFO  -- frontend-server-50220          -- ready
 2015-08-02 21:21:22 -- INFO  -- manager-server                 -- server is ready
+2015-08-09 21:20:20 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 21:20:20 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 21:20:21 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 21:20:21 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 21:20:21 -- INFO  -- manager-server                 -- spawned frontend server on port 50220 with pid 30146
+2015-08-09 21:20:22 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 21:20:22 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 21:20:23 -- INFO  -- manager-server                 -- server is ready
+2015-08-09 21:21:29 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 21:21:29 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 21:24:28 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 21:24:28 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 21:24:29 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 21:24:29 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 21:24:31 -- INFO  -- manager-server                 -- sent graceful server stop notification
+2015-08-09 21:24:31 -- INFO  -- manager-server                 -- waiting 10 sec
+2015-08-09 21:24:41 -- INFO  -- manager-server                 -- stopping frontend server on port 50220 with pid 30146
+2015-08-09 21:24:41 -- INFO  -- manager-server                 -- server is stopped
+2015-08-09 21:24:41 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 21:24:41 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 21:24:42 -- INFO  -- manager-server                 -- spawned frontend server on port 50220 with pid 30223
+2015-08-09 21:24:43 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 21:24:43 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 21:24:44 -- INFO  -- manager-server                 -- server is ready
+2015-08-09 21:25:41 -- INFO  -- manager-server                 -- sent graceful server stop notification
+2015-08-09 21:25:41 -- INFO  -- manager-server                 -- waiting 10 sec
+2015-08-09 21:25:51 -- INFO  -- manager-server                 -- stopping frontend server on port 50220 with pid 30223
+2015-08-09 21:25:51 -- INFO  -- manager-server                 -- server is stopped
+2015-08-09 21:29:35 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 21:29:35 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 21:29:36 -- INFO  -- manager-server                 -- spawned frontend server on port 50220 with pid 30344
+2015-08-09 21:29:36 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 21:29:36 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 21:29:38 -- INFO  -- manager-server                 -- server is ready
+2015-08-09 22:02:00 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 22:02:00 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 22:02:01 -- INFO  -- manager-server                 -- spawned frontend server on port 50220 with pid 946
+2015-08-09 22:02:02 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 22:02:02 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 22:02:03 -- INFO  -- manager-server                 -- server is ready
+2015-08-09 22:02:03 -- INFO  -- manager-server                 -- sent graceful server stop notification
+2015-08-09 22:02:03 -- INFO  -- manager-server                 -- waiting 10 sec
+2015-08-09 22:02:13 -- INFO  -- manager-server                 -- stopping frontend server on port 50220 with pid 946
+2015-08-09 22:02:13 -- INFO  -- manager-server                 -- server is stopped
+2015-08-09 22:02:14 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 22:02:14 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 22:02:15 -- INFO  -- manager-server                 -- spawned frontend server on port 50220 with pid 955
+2015-08-09 22:02:15 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 22:02:15 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 22:02:17 -- INFO  -- manager-server                 -- server is ready
+2015-08-09 22:06:22 -- INFO  -- manager-server                 -- sent graceful server stop notification
+2015-08-09 22:06:22 -- INFO  -- manager-server                 -- waiting 10 sec
+2015-08-09 22:06:32 -- INFO  -- manager-server                 -- stopping frontend server on port 50220 with pid 955
+2015-08-09 22:06:32 -- INFO  -- manager-server                 -- server is stopped
+2015-08-09 22:06:32 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 22:06:32 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 22:06:33 -- INFO  -- manager-server                 -- spawned frontend server on port 50220 with pid 1112
+2015-08-09 22:06:33 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 22:06:33 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 22:06:35 -- INFO  -- manager-server                 -- server is ready
+2015-08-09 22:12:29 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 22:12:29 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 22:13:40 -- INFO  -- manager-server                 -- sent graceful server stop notification
+2015-08-09 22:13:40 -- INFO  -- manager-server                 -- waiting 10 sec
+2015-08-09 22:13:50 -- INFO  -- manager-server                 -- stopping frontend server on port 50220 with pid 1112
+2015-08-09 22:13:50 -- INFO  -- manager-server                 -- server is stopped
+2015-08-09 22:13:50 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 22:13:50 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 22:13:51 -- INFO  -- manager-server                 -- spawned frontend server on port 50220 with pid 1369
+2015-08-09 22:13:51 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 22:13:51 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 22:13:53 -- INFO  -- manager-server                 -- server is ready
+2015-08-09 22:51:57 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 22:51:57 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 22:54:51 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 22:54:51 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 22:57:04 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 22:57:04 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:06:01 -- ERROR -- default                        -- 
+
+Exception:
+'str' object has no attribute 'contains'
+
+Traceback:
+Traceback (most recent call last):,   File "/Users/romahi4/projects/alinafoto/web/server/lib/utils/collector.py", line 25, in collect,     frame = self._collect_frame(tb.tb_frame),   File "/Users/romahi4/projects/alinafoto/web/server/lib/utils/collector.py", line 45, in _collect_frame,     code=inspect.getsourcelines(frame),,   File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/inspect.py", line 690, in getsourcelines,     lines, lnum = findsource(object),   File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/inspect.py", line 529, in findsource,     raise IOError('source code not available'), IOError: source code not available
+2015-08-09 23:09:38 -- ERROR -- default                        -- 
+
+Exception:
+replace() takes at least 2 arguments (1 given)
+
+Traceback:
+Traceback (most recent call last):,   File "/Users/romahi4/projects/alinafoto/web/server/lib/utils/collector.py", line 25, in collect,     frame = self._collect_frame(tb.tb_frame),   File "/Users/romahi4/projects/alinafoto/web/server/lib/utils/collector.py", line 45, in _collect_frame,     code=inspect.getsourcelines(frame),,   File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/inspect.py", line 690, in getsourcelines,     lines, lnum = findsource(object),   File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/inspect.py", line 529, in findsource,     raise IOError('source code not available'), IOError: source code not available
+2015-08-09 23:11:49 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:11:49 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:13:43 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:13:43 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:14:18 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:14:18 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:14:24 -- ERROR -- default                        -- translation not found. key: <weddings_page_title>, lang: <lv>
+2015-08-09 23:15:38 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:15:38 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:15:44 -- ERROR -- default                        -- translation not found. key: <weddings_page_title>, lang: <lv>
+2015-08-09 23:17:12 -- ERROR -- default                        -- translation not found. key: <weddings_page_title>, lang: <lv>
+2015-08-09 23:20:37 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:20:37 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:22:34 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:22:34 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:22:59 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:22:59 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:25:23 -- INFO  -- manager-server                 -- sent graceful server stop notification
+2015-08-09 23:25:23 -- INFO  -- manager-server                 -- waiting 10 sec
+2015-08-09 23:25:33 -- INFO  -- manager-server                 -- stopping frontend server on port 50220 with pid 1369
+2015-08-09 23:25:33 -- INFO  -- manager-server                 -- server is stopped
+2015-08-09 23:25:33 -- INFO  -- manager-server                 -- ------------------------------------------------
+2015-08-09 23:25:33 -- INFO  -- manager-server                 -- started in local environment
+2015-08-09 23:25:34 -- INFO  -- manager-server                 -- spawned frontend server on port 50220 with pid 2604
+2015-08-09 23:25:35 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:25:35 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:25:36 -- INFO  -- manager-server                 -- server is ready
+2015-08-09 23:25:48 -- ERROR -- default                        -- translation not found. key: <weddings_page_title>, lang: <lv>
+2015-08-09 23:25:48 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:26:16 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:26:16 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:26:55 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:26:55 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:26:58 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:27:26 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:28:19 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:28:19 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:29:55 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:31:28 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:31:31 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:31:33 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:32:06 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:32:06 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:32:17 -- ERROR -- default                        -- translation not found. key: <others_page_title>, lang: <lv>
+2015-08-09 23:32:17 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:32:25 -- INFO  -- frontend-server-50220          -- launched in local environment
+2015-08-09 23:32:25 -- INFO  -- frontend-server-50220          -- ready
+2015-08-09 23:32:27 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <index_page_title>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <page_description>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <page_keywords>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <site_name>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <author_name>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <site_name>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <site_name>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <site_name>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <weddings>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <children>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <parties>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <others>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <no_flash_1>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <author_email>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <no_flash_2>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <download>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <author_name>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <author_email>, lang: <ru>
+2015-08-09 23:32:31 -- ERROR -- default                        -- translation not found. key: <author_phone>, lang: <ru>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <index_page_title>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <page_description>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <page_keywords>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <site_name>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <author_name>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <site_name>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <site_name>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <site_name>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <weddings>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <children>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <parties>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <others>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <no_flash_1>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <author_email>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <no_flash_2>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <download>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <author_name>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <author_email>, lang: <en>
+2015-08-09 23:32:33 -- ERROR -- default                        -- translation not found. key: <author_phone>, lang: <en>
+2015-08-09 23:32:36 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:36:04 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:36:49 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:39:17 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:39:35 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:39:40 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:39:45 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:41:46 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-09 23:48:58 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-10 00:00:24 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-10 00:09:07 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-10 00:09:13 -- ERROR -- default                        -- translation not found. key: <others>, lang: <lv>
+2015-08-10 00:10:12 -- INFO  -- manager-server                 -- sent graceful server stop notification
+2015-08-10 00:10:12 -- INFO  -- manager-server                 -- waiting 10 sec
+2015-08-10 00:10:22 -- INFO  -- manager-server                 -- stopping frontend server on port 50220 with pid 2604
+2015-08-10 00:10:22 -- INFO  -- manager-server                 -- server is stopped

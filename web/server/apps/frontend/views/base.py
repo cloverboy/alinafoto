@@ -13,7 +13,7 @@ from lib.translation import Translation
 from settings import (
     BASE_DOMAIN, MEDIA_DOMAIN, BASE_DOMAIN_PROTOCOL, MEDIA_DOMAIN_PROTOCOL,
     DEFAULT_LANG, DEBUG, GOOGLE_ANALYTICS_ENABLED, GOOGLE_ANALYTICS_TRACK_ID,
-    LOCALE_LANG_SHORT_ONLY, FACEBOOK_APP_ID)
+    LOCALE_LANG_SHORT_ONLY, FACEBOOK_APP_ID, FACEBOOK_APP_PAGE, DISQUS_APP_ID)
 
 logger = logging.getLogger('default')
 
@@ -46,7 +46,7 @@ class BaseHandler(RequestHandler):
 
         super(BaseHandler, self).finish(chunk)
 
-    def render(self, tpl_name, lang=DEFAULT_LANG, page=None, tpl_kwargs=None, page_title=None,
+    def render(self, tpl_name='base.html', lang=DEFAULT_LANG, page=None, tpl_kwargs=None, page_title=None,
                page_title_key=None, page_description=None, page_description_key=None,
                page_keywords=None, page_keywords_key=None, og_image=None,
                status_code=None, *args, **kwargs):
@@ -86,6 +86,8 @@ class BaseHandler(RequestHandler):
             'google_analytics_enabled': GOOGLE_ANALYTICS_ENABLED,
             'google_analytics_track_id': GOOGLE_ANALYTICS_TRACK_ID,
             'facebook_app_id': FACEBOOK_APP_ID,
+            'facebook_app_page': FACEBOOK_APP_PAGE,
+            'disqus_app_id': DISQUS_APP_ID,
             'base_domain': BASE_DOMAIN,
             'media_domain': MEDIA_DOMAIN,
             'base_domain_protocol': BASE_DOMAIN_PROTOCOL,

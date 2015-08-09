@@ -17,7 +17,7 @@
             <meta name="keywords" content="{{ ', '.join(page_keywords) }}"/>
         {% end %}
 
-        <meta name="author" content="{% module _('site_author') %}"/>
+        <meta name="author" content="{% module _('author_name') %}"/>
         <meta name="robots" content="all,index,follow"/>
         <link rel="shortcut icon" href="favicon.ico"/>
         <link rel="apple-touch-icon" href="/img/virality/img_240x240.png"/>
@@ -57,19 +57,33 @@
         <meta property="og:type" content="website"/>
         <meta property="fb:app_id" content="{{ facebook_app_id }}"/>
 
-        <script type="text/javascript" src="/js/jquery-1.6.1.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
         <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/js/swfobject-2.2.js"></script>
-        <script type="text/javascript" src="/svcore/js/simpleviewer.js"></script>
+        <script type="text/javascript" src="/js/swfobject.js"></script>
+        <script type="text/javascript" src="/js/simpleviewer.js"></script>
         <script type='text/javascript'>jQuery.noConflict();</script>
+        <script type='text/javascript' src="/js/prototype.js"></script>
+        <script type='text/javascript' src="/js/scriptaculous.js"></script>
+
+        <!--[if lt IE 9]>
+          <script type="text/javascript" src="/js/excanvas.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript" src="/js/spinners.min.js"></script>
+        <script type="text/javascript" src="/js/lightview.js"></script>
+
         <link type="text/css" rel="stylesheet" href="/css/lightview.css" />
-        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/prototype/1/prototype.js'></script>
-        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/scriptaculous/1/scriptaculous.js'></script>
-        <script type='text/javascript' src='/js/lightview.js'></script>
+        <link type="text/css" rel="stylesheet" href="/css/app.css" />
 
         <script type="text/javascript">
             (function($) {
                 $(document).ready(function() {
+                    var contacts = $('.contacts'),
+                        contactsRight = contacts.css('right'),
+                        btnShow = $('.btn-show'),
+                        btnHide = $('.btn-hide'),
+                        btnGuestbook = $('.btn-guestbook');
+
                     simpleviewer.ready(function () {
                         simpleviewer.load(
                                 "flash",
@@ -78,29 +92,46 @@
                                 "222222",
                                 true,
                                 {
-                                    'galleryURL': '/xml/main.xml'
+                                    'galleryURL': '/xml/{{ page }}.xml'
                                 },
                                 {
                                     'wmode':'opaque'
                                 }
                         );
-                        var o = $('div#contacts'), obj = $('div#show_contacts');
 
-                        $('a.hide').click(function(){
-                            o.fadeOut('fast');
-                            o.animate({'right': '-215px'}, 500, 'easeInOutQuart', function() {});
-                            obj.show();
-                            obj.fadeIn('fast');
+                        btnHide.click(function(e){
+                            e.preventDefault();
+                            contacts.fadeOut('fast').css({'right': contactsRight});
+                            btnShow.show().fadeIn('fast');
                         });
 
-                        obj.click(function(){
-                            if(obj.css('display') != 'none'){
-                                o.show();
-                                obj.fadeOut('fast', function(){
-                                    obj.hide();
-                                    o.animate({'right': '0px'}, 1000, 'easeInOutQuart', function() {});
+                        btnShow.click(function(){
+                            if(btnShow.css('display') != 'none'){
+                                contacts.show();
+                                btnShow.fadeOut('fast', function(){
+                                    btnShow.hide();
+                                    contacts.animate({'right': 0}, 1000, 'easeInOutQuart');
                                 });
-                            }});
+                            }
+                        });
+
+                        btnGuestbook.click(function(e){
+                            e.preventDefault();
+                            Lightview.show({
+                                url: '/{{ lang }}/guestbook',
+                                caption: 'caption',
+                                title:'title',
+                                type: 'ajax',
+                                options: {
+                                    autosize: true,
+                                    topclose: true,
+                                    ajax: {
+                                        method: 'get',
+                                        evalScripts: true
+                                    }
+                                }
+                            });
+                        });
                     });
                 });
 
@@ -117,166 +148,35 @@
                 })(jQuery);
 
                 jQuery.preLoadImages(
-                        '/img/btn_all_lv.png',
-                        '/img/btn_weddings_lv.png',
-                        '/img/btn_children_lv.png',
-                        '/img/btn_parties_lv.png',
-                        '/img/btn_others_lv.png',
-                        '/img/btn_all_active_lv.png',
-                        '/img/btn_weddings_active_lv.png',
-                        '/img/btn_children_active_lv.png',
-                        '/img/btn_parties_active_lv.png',
-                        '/img/btn_others_active_lv.png'
+                    '/img/btn_all_{{ lang }}.png',
+                    '/img/btn_weddings_{{ lang }}.png',
+                    '/img/btn_children_{{ lang }}.png',
+                    '/img/btn_parties_{{ lang }}.png',
+                    '/img/btn_others_{{ lang }}.png',
+                    '/img/btn_all_active_{{ lang }}.png',
+                    '/img/btn_weddings_active_{{ lang }}.png',
+                    '/img/btn_children_active_{{ lang }}.png',
+                    '/img/btn_parties_active_{{ lang }}.png',
+                    '/img/btn_others_active_{{ lang }}.png'
                 );
 
             })(jQuery);
 
-            function showGuestBook(lang){
-                Lightview.show({
-                    href: '/'+lang+'/guestbook',
-                    rel: 'ajax',
-                    options: {
-                        autosize: true,
-                        topclose: true,
-                        ajax: {
-                            method: 'get',
-                            evalScripts: true
-                        }
-                    }
-                });
-            }
-
             (function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
+                if (d.getElementById(id)) {
+                    return;
+                }
                 js = d.createElement(s);
                 js.id = id;
-                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=358611520921796";
+                js.src = '//connect.facebook.net/{{ locale_code }}/sdk.js#version=v2.0&xfbml=1&appId={{ facebook_app_id }}';
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
 
-            var disqus_identifier = '1126355', disqus_url = 'http://www.alinafoto.lv/lv';
+            var disqus_identifier = '{{ disqus_app_id }}', disqus_url = '{{ base_path }}/{{ lang }}';
 
         </script>
 
-        <style>
-            html,
-            body,
-            div,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            ul,
-            ol,
-            dl,
-            li,
-            dt,
-            dd,
-            p,
-            blockquote,
-            pre,
-            form,
-            fieldset,
-            table,
-            th,
-            td {
-                margin: 0;
-                padding: 0;
-            }
-            a,
-            img {
-                background: transparent;
-                border: 0px;
-            }
-            table {
-                border-collapse: collapse;
-            }
-            body {
-                font: 12px Tahoma, Arial;
-                background: #222;
-                overflow: hidden;
-            }
-            .cont {
-                width: 100%;
-                height: 100%;
-                margin: 0 auto;
-            }
-            .fullscreen {
-                width: 100%;
-                height: 100%;
-            }
-            .centered_div {
-                margin: 25px auto 0;
-            }
-            .relative {
-                position: relative;
-                top: 0;
-                left: 0;
-            }
-            .btn {
-                color: red;
-                cursor: pointer;
-                font: bold 15px Tahoma, Arial;
-                position: absolute;
-                right: 0;
-                top: 51px;
-                z-index: 999;
-            }
-            .contacts {
-                background: none repeat scroll 0 0 #fff;
-                display: none;
-                padding: 8px 54px;
-                position: absolute;
-                right: -215px;
-                top: 45px;
-                z-index: 999;
-                text-align: center;
-            }
-            .contacts a.hide {
-                background: url("/img/close.gif") no-repeat scroll 50% 50% transparent;
-                height: 16px;
-                position: absolute;
-                right: 2px;
-                text-indent: -9999px;
-                top: 2px;
-                white-space: nowrap;
-                width: 16px;
-                z-index: 1;
-            }
-            .contacts p {
-                color: #000;
-                line-height: 18px;
-                white-space: nowrap;
-            }
-            .cats,
-            .langs {
-                background: none repeat scroll 0 0 transparent;
-                left: 141px;
-                position: fixed;
-                top: 7px;
-            }
-            .langs {
-                left: 20px;
-                top: 10px;
-            }
-            .cats a,
-            .langs a {
-                color: #222;
-                border: none;
-                text-decoration: none;
-                text-outline: none;
-            }
-            #disqus_thread a {
-                color: #4E7BA3!important;
-            }
-            #social {
-                top: 122px;
-                right: 4px;
-            }
-        </style>
     </head>
     <body>
         {% block body %}
@@ -286,36 +186,36 @@
                     <td class="fullscreen" align="center">
                         <div class="fulscreen relative">
                             <div class="langs">
-                                <a href="/lv"><img src="/img/btn_lang_lv_active.png" alt="img"/></a>
-                                <a href="/en"><img src="/img/btn_lang_en.png" alt="img"/></a>
-                                <a href="/ru"><img src="/img/btn_lang_ru.png" alt="img"/></a>
+                                {% for choice in langs %}
+                                    <a href="/{{ choice }}"><img src="/img/btn_lang_{{ choice }}{% if lang == choice %}_active{% end %}.png" alt="{{ choice }}"/></a>
+                                {% end %}
                             </div>
                             <div class="cats">
-                                <a href="/"><img src="/img/btn_all_active_lv.png" alt="img"/></a>
-                                <a href="/lv/weddings"><img src="/img/btn_weddings_lv.png" alt="img"/></a>
-                                <a href="/lv/children"><img src="/img/btn_children_lv.png" alt="img"/></a>
-                                <a href="/lv/parties"><img src="/img/btn_parties_lv.png" alt="img"/></a>
-                                <a href="/lv/others"><img src="/img/btn_others_lv.png" alt="img"/></a>
-                                <span class="guestbook" onClick="showGuestBook('lv');return false;">
-                                    <a href="/lv/guestbook"><img src="/img/btn_guestbook_lv.png" alt="img"/></a>
+                                <a href="/{{ lang }}"><img src="/img/btn_all{% if page == 'index' %}_active{% end %}_{{ lang }}.png" alt="All"/></a>
+                                <a href="/{{ lang }}/weddings"><img src="/img/btn_weddings{% if page == 'weddings' %}_active{% end %}_{{ lang }}.png" alt="{% module _('weddings') %}"/></a>
+                                <a href="/{{ lang }}/children"><img src="/img/btn_children{% if page == 'children' %}_active{% end %}_{{ lang }}.png" alt="{% module _('children') %}"/></a>
+                                <a href="/{{ lang }}/parties"><img src="/img/btn_parties{% if page == 'parties' %}_active{% end %}_{{ lang }}.png" alt="{% module _('parties') %}"/></a>
+                                <a href="/{{ lang }}/others"><img src="/img/btn_others{% if page == 'others' %}_active{% end %}_{{ lang }}.png" alt="{% module _('others') %}"/></a>
+                                <span class="btn btn-guestbook">
+                                    <a href="/{{ lang }}/guestbook"><img src="/img/btn_guestbook_{{ lang }}.png" alt="Guestbook"/></a>
                                 </span>
                             </div>
                         </div>
-                        <div id="flash"><div class="centered_div">Profesionāla fotogrāfa Alīnas Taranovskas web lapa (<a href="mailto:alina.taranovska@gmail.com">alina.taranovska@gmail.com</a>).<br/>Lai, apskatītu portfolio, lūdzu, instalējiet pielikumu Flash Player <a href="http://www.adobe.com/go/getflashplayer/">Ielādēt</a>.</div></div>
+                        <div id="flash"><div class="centered_div">{% module _('no_flash_1') %}&nbsp;({% module _('author_email') %}).<br/>{% module _('no_flash_2') %}&nbsp;<a href="http://www.adobe.com/go/getflashplayer/">{% module _('download') %}</a>.</div></div>
                     </td>
                   </tr>
                 </table>
             </div>
-            <div id="show_contacts" class="btn"><img src="/img/btn_contacts_lv.png" alt="contacts"/></div>
-            <div id="contacts" class="contacts">
-                <a class="hide" href="#hide">x</a>
-                <p>Alīna Taranovska</p>
-                <p><a href="mailto:alina.taranovska@gmail.com">alina.taranovska@gmail.com</a></p>
-                <p>(+371) 268-676-08</p>
+            <div class="btn btn-show"><img src="/img/btn_contacts_{{ lang }}.png" alt="contacts"/></div>
+            <div class="contacts">
+                <a class="btn btn-hide" href="#">x</a>
+                <p>{% module _('author_name') %}</p>
+                <p>{% module _('author_email') %}</p>
+                <p>{% module _('author_phone') %}</p>
             </div>
             <div id="fb-root"></div>
-            <div id="social" class="btn">
-                <div class="fb-like" data-href="http://www.facebook.com/pages/Alina-Foto/124376354410080" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-colorscheme="light"></div>
+            <div class="btn btn-social">
+                <div class="fb-like" data-href="{{ facebook_app_page }}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-colorscheme="light"></div>
             </div>
         {% end %}
 

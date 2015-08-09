@@ -1,0 +1,116 @@
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+blockquote,
+pre,
+form,
+fieldset,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+a,
+img {
+    background: transparent;
+    border: 0;
+}
+table {
+    border-collapse: collapse;
+}
+body {
+    font: 12px Tahoma, Arial;
+    background: #222;
+    overflow: hidden;
+}
+.cont {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+.fullscreen {
+    width: 100%;
+    height: 100%;
+}
+.centered_div {
+    margin: 25px auto 0;
+}
+.relative {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.btn-show {
+    color: red;
+    cursor: pointer;
+    font: bold 15px Tahoma, Arial;
+    position: absolute;
+    right: 0;
+    top: 51px;
+    z-index: 999;
+}
+.contacts {
+    background: none repeat scroll 0 0 #fff;
+    display: none;
+    padding: 8px 54px;
+    position: absolute;
+    right: -260px;
+    top: 45px;
+    z-index: 999;
+    text-align: center;
+}
+.btn-hide {
+    background: url("/img/close.gif") no-repeat scroll 50% 50% transparent;
+    height: 16px;
+    position: absolute;
+    right: 2px;
+    text-indent: -9999px;
+    top: 2px;
+    white-space: nowrap;
+    width: 16px;
+    z-index: 1;
+}
+.contacts p {
+    color: #000;
+    line-height: 18px;
+    white-space: nowrap;
+}
+.cats,
+.langs {
+    background: none repeat scroll 0 0 transparent;
+    left: 141px;
+    position: fixed;
+    top: 7px;
+}
+.langs {
+    left: 20px;
+    top: 10px;
+}
+.cats a,
+.langs a {
+    color: #222;
+    border: none;
+    text-decoration: none;
+    text-outline: none;
+}
+#disqus_thread a {
+    color: #4E7BA3!important;
+}
+.btn-social {
+    top: 122px;
+    right: 4px;
+}
