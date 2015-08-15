@@ -2,12 +2,12 @@
 import os
 
 #----------COMMON----------
-SERVER_ENVIRON = os.environ.get('SERVER_ENVIRON', 'production')
+SERVER_ENVIRON = os.environ.get('SERVER_ENVIRON', 'local')
 PYTHON_EXECUTABLE = 'python'
 DEBUG = False
 
 #----------PATHS----------
-BASE_DOMAIN = 'www.alinafoto.lv'
+BASE_DOMAIN = 'alinafoto.lv'
 MEDIA_DOMAIN = BASE_DOMAIN
 BASE_DOMAIN_PROTOCOL = 'http'
 MEDIA_DOMAIN_PROTOCOL = BASE_DOMAIN_PROTOCOL
@@ -72,7 +72,7 @@ TIME_ZONE_GMT_OFFSET = 0 # used to generate gmt string for setting a session coo
 
 #----------MAIL----------
 LOGGER_EMAIL_HOST = 'localhost'
-LOGGER_EMAIL = 'wysemediaerrors@gmail.com'
+LOGGER_EMAIL = 'romahi4@gmail.com'
 
 #----------LOGGING----------
 LOGGING = {
@@ -178,4 +178,11 @@ config.dictConfig(LOGGING)
 
 #----------GOOGLE-ANALYTICS----------
 GOOGLE_ANALYTICS_ENABLED = True
-GOOGLE_ANALYTICS_CODE = 'UA-46207976-1'
+GOOGLE_ANALYTICS_TRACK_ID = 'UA-24562738-1'
+
+# ----------FACEBOOK----------
+FACEBOOK_APP_ID = '358611520921796'
+FACEBOOK_APP_PAGE = 'https://www.facebook.com/profesionalsfotografs'
+
+# ----------DISQUS----------
+DISQUS_APP_ID = '1126355'

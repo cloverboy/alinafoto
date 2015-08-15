@@ -19,7 +19,7 @@
 
         <meta name="author" content="{% module _('author_name') %}"/>
         <meta name="robots" content="all,index,follow"/>
-        <link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="shortcut icon" href="/img/favicon.ico"/>
         <link rel="apple-touch-icon" href="/img/virality/img_240x240.png"/>
 
         <meta name="application-name" content="{% module _('site_name') %}"/>
@@ -118,7 +118,7 @@
                         btnGuestbook.click(function(e){
                             e.preventDefault();
                             Lightview.show({
-                                url: '/{{ lang }}/guestbook',
+                                url: "{% module url('guestbook_page', lang) %}",
                                 caption: 'caption',
                                 title:'title',
                                 type: 'ajax',
@@ -173,7 +173,7 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
 
-            var disqus_identifier = '{{ disqus_app_id }}', disqus_url = '{{ base_path }}/{{ lang }}';
+            var disqus_identifier = '{{ disqus_app_id }}', disqus_url = "{% module url('index_page', lang, full_url=True) %}";
 
         </script>
 
@@ -187,17 +187,17 @@
                         <div class="fulscreen relative">
                             <div class="langs">
                                 {% for choice in langs %}
-                                    <a href="/{{ choice }}"><img src="/img/btn_lang_{{ choice }}{% if lang == choice %}_active{% end %}.png" alt="{{ choice }}"/></a>
+                                    <a href="{% module url('index_page', choice) %}"><img src="/img/btn_lang_{{ choice }}{% if lang == choice %}_active{% end %}.png" alt="{{ choice }}"/></a>
                                 {% end %}
                             </div>
                             <div class="cats">
-                                <a href="/{{ lang }}"><img src="/img/btn_all{% if page == 'index' %}_active{% end %}_{{ lang }}.png" alt="All"/></a>
-                                <a href="/{{ lang }}/weddings"><img src="/img/btn_weddings{% if page == 'weddings' %}_active{% end %}_{{ lang }}.png" alt="{% module _('weddings') %}"/></a>
-                                <a href="/{{ lang }}/children"><img src="/img/btn_children{% if page == 'children' %}_active{% end %}_{{ lang }}.png" alt="{% module _('children') %}"/></a>
-                                <a href="/{{ lang }}/parties"><img src="/img/btn_parties{% if page == 'parties' %}_active{% end %}_{{ lang }}.png" alt="{% module _('parties') %}"/></a>
-                                <a href="/{{ lang }}/others"><img src="/img/btn_others{% if page == 'others' %}_active{% end %}_{{ lang }}.png" alt="{% module _('others') %}"/></a>
+                                <a href="{% module url('index_page', lang) %}"><img src="/img/btn_all{% if page == 'index' %}_active{% end %}_{{ lang }}.png" alt="All"/></a>
+                                <a href="{% module url('weddings_page', lang) %}"><img src="/img/btn_weddings{% if page == 'weddings' %}_active{% end %}_{{ lang }}.png" alt="{% module _('weddings') %}"/></a>
+                                <a href="{% module url('children_page', lang) %}"><img src="/img/btn_children{% if page == 'children' %}_active{% end %}_{{ lang }}.png" alt="{% module _('children') %}"/></a>
+                                <a href="{% module url('parties_page', lang) %}"><img src="/img/btn_parties{% if page == 'parties' %}_active{% end %}_{{ lang }}.png" alt="{% module _('parties') %}"/></a>
+                                <a href="{% module url('others_page', lang) %}"><img src="/img/btn_others{% if page == 'others' %}_active{% end %}_{{ lang }}.png" alt="{% module _('others') %}"/></a>
                                 <span class="btn btn-guestbook">
-                                    <a href="/{{ lang }}/guestbook"><img src="/img/btn_guestbook_{{ lang }}.png" alt="Guestbook"/></a>
+                                    <a href="{% module url('guestbook_page', lang) %}"><img src="/img/btn_guestbook_{{ lang }}.png" alt="Guestbook"/></a>
                                 </span>
                             </div>
                         </div>

@@ -4,19 +4,19 @@ import urlparse, urllib
 
 from settings import LOCALE_LANG_SHORT, BASE_DOMAIN_PROTOCOL, BASE_DOMAIN
 
-PAGE_HANDLER_PAGES = ['index', 'weddings', 'children', 'parties', 'others', ]
-
-LANGS = '^/(%s)' % ('|'.join([v for k, v in LOCALE_LANG_SHORT]))
-PAGE_HANDLER_PAGES = '(%s)' % '|'.join(PAGE_HANDLER_PAGES)
-
 URL_PATTERNS = {
     'index_page': '/{}/',
     'guestbook_page': '/{}/guestbook/',
     'ping_pong_page': '/ping-pong/',
 }
 
+PAGE_HANDLER_PAGES = ['weddings', 'children', 'parties', 'others', ]
+
 for slug in PAGE_HANDLER_PAGES:
     URL_PATTERNS['%s_page' % slug] = '/{}/%s/' % slug
+
+LANGS = '^/(%s)' % ('|'.join([v for k, v in LOCALE_LANG_SHORT]))
+PAGE_HANDLER_PAGES = '(%s)' % '|'.join(PAGE_HANDLER_PAGES)
 
 
 def reverse_page(page_name, *args, **kwargs):

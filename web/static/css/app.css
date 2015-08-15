@@ -114,3 +114,18 @@ body {
     top: 122px;
     right: 4px;
 }
+.sv-nav-photo-list {
+    margin-left: 0!important;
+}
+.error-container {
+    text-align: center;
+    color: #CDD0B5;
+}
+.error-container img {
+    margin: 10% 0 15px 0;
+}
+.error-container a{
+    color: #CDD0B5;
+    margin-top: 15px;
+    display: block;
+}

@@ -1,22 +1,9 @@
-favicon
-virality icons
-sitemap
-robots
-nginx error
-production settings
+guestbook
 
-setup dns
-
-reverse page
-'index_page': '/{}/',
-'about_page': '/{}/about/',
-
-
-if not flash
-
-
- <div id="social" class="btn">
-    <div class="fb-like" data-href="http://www.facebook.com/pages/Alina-Foto/124376354410080" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-colorscheme="light"></div>
-</div>
-
-templates/frontend/page   change to templates/
+merge dev branch to master
+remove dev branch
+upload to heroku
+custom domain
+test if 10 people online
+remove/write the same post on facebook to update year from 2013 to 2015
+setup advertisement

@@ -182,7 +182,7 @@ GOOGLE_ANALYTICS_TRACK_ID = 'UA-24562738-1'
 
 # ----------FACEBOOK----------
 FACEBOOK_APP_ID = '358611520921796'
-FACEBOOK_APP_PAGE = 'http://www.facebook.com/pages/Alina-Foto/124376354410080'
+FACEBOOK_APP_PAGE = 'https://www.facebook.com/profesionalsfotografs'
 
 # ----------DISQUS----------
 DISQUS_APP_ID = '1126355'

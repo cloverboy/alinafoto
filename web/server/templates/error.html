@@ -1,10 +1,12 @@
-{% extends ../base/base.html %}
+{% extends base.html %}
 
 {% block body %}
     <div id="wrapper">
         <div class="container error-container">
+            <img src="/img/error_page_img.png" alt="{% module _('error_page_img') %}"/>
             <h1>{% module _('error_page_h1') %}</h1>
             <p>{% module _('error_page_p_1') %}</p>
+            <a href="{% module url('index_page', lang) %}">{% module _('error_page_return') %}</a>
         </div>
     </div>
 {% end %}

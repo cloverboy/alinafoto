@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
+import os
 import logging
 
 from tornado.web import RequestHandler
 from tornado.locale import set_default_locale
 
+from lib.utils.file import file_exists
 from lib.utils.locale import get_locale_code_by_lang
 from lib.utils.compress import gzip_string, minify_string
 from lib.utils.collector import TracebackCollector
@@ -13,7 +15,8 @@ from lib.translation import Translation
 from settings import (
     BASE_DOMAIN, MEDIA_DOMAIN, BASE_DOMAIN_PROTOCOL, MEDIA_DOMAIN_PROTOCOL,
     DEFAULT_LANG, DEBUG, GOOGLE_ANALYTICS_ENABLED, GOOGLE_ANALYTICS_TRACK_ID,
-    LOCALE_LANG_SHORT_ONLY, FACEBOOK_APP_ID, FACEBOOK_APP_PAGE, DISQUS_APP_ID)
+    LOCALE_LANG_SHORT_ONLY, FACEBOOK_APP_ID, FACEBOOK_APP_PAGE, DISQUS_APP_ID,
+    TEMPLATES_PATH)
 
 logger = logging.getLogger('default')
 
@@ -46,10 +49,18 @@ class BaseHandler(RequestHandler):
 
         super(BaseHandler, self).finish(chunk)
 
-    def render(self, tpl_name='base.html', lang=DEFAULT_LANG, page=None, tpl_kwargs=None, page_title=None,
+    def render(self, tpl_name=None, lang=DEFAULT_LANG, page=None, tpl_kwargs=None, page_title=None,
                page_title_key=None, page_description=None, page_description_key=None,
                page_keywords=None, page_keywords_key=None, og_image=None,
                status_code=None, *args, **kwargs):
+
+        if tpl_name is None:
+            tpl_name = 'base.html'
+
+            if page is not None:
+                page_tpl_name = '%s.html' % page
+                if file_exists(os.path.join(TEMPLATES_PATH, page_tpl_name)):
+                    tpl_name = page_tpl_name
 
         if lang not in LOCALE_LANG_SHORT_ONLY:
             lang = DEFAULT_LANG
@@ -111,7 +122,7 @@ class BaseHandler(RequestHandler):
             self._log()
 
         try:
-            super(BaseHandler, self).render('frontend/page/%s' % tpl_name, **render_tpl_kwargs)
+            super(BaseHandler, self).render(tpl_name, **render_tpl_kwargs)
         except Exception as e:
             ip = self.request.remote_ip
             collected = TracebackCollector().collect(e)
