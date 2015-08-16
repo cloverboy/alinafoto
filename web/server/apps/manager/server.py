@@ -19,8 +19,6 @@ SERVER_PATH = os.path.dirname(os.path.realpath(__file__))
 BASE_PATH = os.path.normpath(os.path.join(SERVER_PATH, '../../'))
 sys.path.insert(0, BASE_PATH)
 
-print '++++++ sys.path = <%s> +++++' % sys.path
-
 from lib.manager import ManagerServer
 
 if __name__ == '__main__':

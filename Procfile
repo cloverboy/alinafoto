@@ -1,1 +1,1 @@
-web: python web/server/apps/manager/server.py --server-environ production --pythonpath=/app/web/server
+web: sh -c 'cd /app/web/server/apps/manager && python server.py --server-environ production'
