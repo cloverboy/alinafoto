@@ -1,1 +1,1 @@
-web: sh -c 'cd /app/web/server/apps/manager && python server.py --server-environ production'
+web: python web/server/apps/manager/server.py --server-environ production
