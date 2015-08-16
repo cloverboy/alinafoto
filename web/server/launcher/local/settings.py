@@ -44,7 +44,7 @@ LOCALE_CODE = (
 )
 
 #----------FRONTEND----------
-FRONTEND_SERVER_PORTS = [50220, ]
+FRONTEND_SERVER_PORTS = [int(os.environ.get('PORT', 5000)), ]
 
 #----------MANAGER----------
 MANAGER_PUB_ADDRESS = '127.0.0.1'
