@@ -4,3 +4,6 @@ virtualenv==1.10.1
 psutil==3.1.1
 pyzmq==14.0.0
 pillow==2.7.0
+pycrypto==2.6.1
+python-geoip==1.2
+python-geoip-geolite2==2015.0303
