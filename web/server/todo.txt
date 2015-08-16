@@ -1,6 +1,0 @@
-upload to heroku
-custom domain
-test if 10 people online
-
-remove/write the same post on facebook to update year from 2013 to 2015
-setup facebook advertisement
