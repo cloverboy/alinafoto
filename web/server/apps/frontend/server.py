@@ -6,7 +6,7 @@ import logging
 from argparse import ArgumentParser
 
 parser = ArgumentParser(prog='Frontend server', description='Server for handling web requests')
-parser.add_argument('-p', '--server-port', default=50220, help='Port number')
+parser.add_argument('-p', '--server-port', default=5000, help='Port number')
 parser.add_argument('-e', '--server-environ', default='local', help='Server environment (local|production)')
 args = parser.parse_args()
 
