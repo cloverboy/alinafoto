@@ -185,4 +185,17 @@ FACEBOOK_APP_ID = '358611520921796'
 FACEBOOK_APP_PAGE = 'https://www.facebook.com/profesionalsfotografs'
 
 # ----------DISQUS----------
-DISQUS_APP_ID = '1126355'
+DISQUS = {
+    'lv': {
+        'app_id': '1126355',
+        'shortname': 'alinafoto',
+    },
+    'ru': {
+        'app_id': '1126441',
+        'shortname': 'alinafotoru',
+    },
+    'en': {
+        'app_id': '1126443',
+        'shortname': 'alinafotoen',
+    },
+}

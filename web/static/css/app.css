@@ -84,6 +84,10 @@ body {
     width: 16px;
     z-index: 1;
 }
+.btn-social {
+    top: 122px;
+    right: 4px;
+}
 .contacts p {
     color: #000;
     line-height: 18px;
@@ -107,16 +111,6 @@ body {
     text-decoration: none;
     text-outline: none;
 }
-#disqus_thread a {
-    color: #4E7BA3!important;
-}
-.btn-social {
-    top: 122px;
-    right: 4px;
-}
-.sv-nav-photo-list {
-    margin-left: 0!important;
-}
 .error-container {
     text-align: center;
     color: #CDD0B5;
@@ -128,4 +122,10 @@ body {
     color: #CDD0B5;
     margin-top: 15px;
     display: block;
+}
+#disqus_thread a {
+    color: #4E7BA3!important;
+}
+.sv-nav-photo-list {
+    margin-left: 0!important;
 }

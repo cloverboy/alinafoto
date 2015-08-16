@@ -6,11 +6,10 @@ from settings import LOCALE_LANG_SHORT, BASE_DOMAIN_PROTOCOL, BASE_DOMAIN
 
 URL_PATTERNS = {
     'index_page': '/{}/',
-    'guestbook_page': '/{}/guestbook/',
     'ping_pong_page': '/ping-pong/',
 }
 
-PAGE_HANDLER_PAGES = ['weddings', 'children', 'parties', 'others', ]
+PAGE_HANDLER_PAGES = ['weddings', 'children', 'parties', 'others', 'guestbook', ]
 
 for slug in PAGE_HANDLER_PAGES:
     URL_PATTERNS['%s_page' % slug] = '/{}/%s/' % slug

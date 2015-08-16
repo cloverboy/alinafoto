@@ -15,7 +15,7 @@ from lib.translation import Translation
 from settings import (
     BASE_DOMAIN, MEDIA_DOMAIN, BASE_DOMAIN_PROTOCOL, MEDIA_DOMAIN_PROTOCOL,
     DEFAULT_LANG, DEBUG, GOOGLE_ANALYTICS_ENABLED, GOOGLE_ANALYTICS_TRACK_ID,
-    LOCALE_LANG_SHORT_ONLY, FACEBOOK_APP_ID, FACEBOOK_APP_PAGE, DISQUS_APP_ID,
+    LOCALE_LANG_SHORT_ONLY, FACEBOOK_APP_ID, FACEBOOK_APP_PAGE, DISQUS,
     TEMPLATES_PATH)
 
 logger = logging.getLogger('default')
@@ -98,7 +98,7 @@ class BaseHandler(RequestHandler):
             'google_analytics_track_id': GOOGLE_ANALYTICS_TRACK_ID,
             'facebook_app_id': FACEBOOK_APP_ID,
             'facebook_app_page': FACEBOOK_APP_PAGE,
-            'disqus_app_id': DISQUS_APP_ID,
+            'disqus': DISQUS.get(lang),
             'base_domain': BASE_DOMAIN,
             'media_domain': MEDIA_DOMAIN,
             'base_domain_protocol': BASE_DOMAIN_PROTOCOL,

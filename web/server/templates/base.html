@@ -119,8 +119,6 @@
                             e.preventDefault();
                             Lightview.show({
                                 url: "{% module url('guestbook_page', lang) %}",
-                                caption: 'caption',
-                                title:'title',
                                 type: 'ajax',
                                 options: {
                                     autosize: true,
@@ -173,7 +171,7 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
 
-            var disqus_identifier = '{{ disqus_app_id }}', disqus_url = "{% module url('index_page', lang, full_url=True) %}";
+            var disqus_identifier = '{{ disqus["app_id"] }}', disqus_url = "{% module url('index_page', lang, full_url=True) %}";
 
         </script>
 
