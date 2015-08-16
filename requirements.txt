@@ -1,4 +1,7 @@
-django==1.8.2
-mysql-python==1.2.5
-uwsgi==2.0.8
+argparse==1.2.1
+distribute==0.6.32
+tornado==4.2.0
+virtualenv==1.10.1
 psutil==3.1.1
+pyzmq==14.0.0
+pillow==2.7.0
