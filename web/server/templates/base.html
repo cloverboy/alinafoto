@@ -19,15 +19,15 @@
 
         <meta name="author" content="{% module _('author_name') %}"/>
         <meta name="robots" content="all,index,follow"/>
-        <link rel="shortcut icon" href="/img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="/img/virality/img_240x240.png"/>
+        <link rel="shortcut icon" href="{{ media_path }}/img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="{{ media_path }}/img/virality/img_240x240.png"/>
 
         <meta name="application-name" content="{% module _('site_name') %}"/>
         <meta name="msapplication-TileColor" content="#f1f1f1"/>
-        <meta name="msapplication-square310x310logo" content="/img/virality/img_310x310.png"/>
-        <meta name="msapplication-wide310x150logo" content="/img/virality/img_310x150.png"/>
-        <meta name="msapplication-square150x150logo" content="/img/virality/img_150x150.png"/>
-        <meta name="msapplication-square70x70logo" content="/img/virality/img_70x70.png"/>
+        <meta name="msapplication-square310x310logo" content="{{ media_path }}/img/virality/img_310x310.png"/>
+        <meta name="msapplication-wide310x150logo" content="{{ media_path }}/img/virality/img_310x150.png"/>
+        <meta name="msapplication-square150x150logo" content="{{ media_path }}/img/virality/img_150x150.png"/>
+        <meta name="msapplication-square70x70logo" content="{{ media_path }}/img/virality/img_70x70.png"/>
 
         {% block canonical %}
             <link rel="canonical" href="{% raw page_full_url %}"/>
@@ -49,7 +49,7 @@
         {% end %}
 
         {% block og_image %}
-            <meta property="og:image" content="/img/virality/img_240x240.png"/>
+            <meta property="og:image" content="{{ media_path }}/img/virality/img_240x240.png"/>
         {% end %}
 
         <meta property="og:site_name" content="{% module _('site_name') %}"/>
