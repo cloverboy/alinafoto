@@ -104,7 +104,7 @@ class BaseHandler(RequestHandler):
             'base_domain_protocol': BASE_DOMAIN_PROTOCOL,
             'media_domain_protocol': MEDIA_DOMAIN_PROTOCOL,
             'base_path': '%s://%s' % (BASE_DOMAIN_PROTOCOL, BASE_DOMAIN),
-            'media_path': '%s://%s' % (BASE_DOMAIN_PROTOCOL, MEDIA_DOMAIN),
+            'media_path': '%s://%s' % (MEDIA_DOMAIN_PROTOCOL, MEDIA_DOMAIN),
             'langs': LOCALE_LANG_SHORT_ONLY,
             'page_short_url': page_short_url,
             'page_full_url': page_full_url,

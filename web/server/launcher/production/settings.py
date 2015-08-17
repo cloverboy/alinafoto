@@ -7,7 +7,7 @@ PYTHON_EXECUTABLE = 'python'
 DEBUG = False
 
 #----------PATHS----------
-BASE_DOMAIN = 'alinafoto.lv'
+BASE_DOMAIN = 'www.alinafoto.lv'
 MEDIA_DOMAIN = BASE_DOMAIN
 BASE_DOMAIN_PROTOCOL = 'http'
 MEDIA_DOMAIN_PROTOCOL = BASE_DOMAIN_PROTOCOL
