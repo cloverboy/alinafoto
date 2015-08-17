@@ -36,7 +36,7 @@
         {% block hreflang %}
             <link hreflang="x-default" rel="alternate" href="{% raw page_full_url %}" />
             {% for choice in langs %}
-                <link hreflang="{{ choice }}" rel="alternate" href="{% raw page_full_url.replace(lang, choice) %}" />
+                <link hreflang="{{ choice }}" rel="alternate" href="{{ base_path }}/{{ choice }}" />
             {% end %}
         {% end %}
 
