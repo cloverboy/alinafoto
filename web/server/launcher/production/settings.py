@@ -2,7 +2,7 @@
 import os
 
 #----------COMMON----------
-SERVER_ENVIRON = os.environ.get('SERVER_ENVIRON', 'local')
+SERVER_ENVIRON = os.environ.get('SERVER_ENVIRON', 'production')
 PYTHON_EXECUTABLE = 'python'
 DEBUG = False
 
