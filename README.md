@@ -73,3 +73,7 @@ __[nowww naked domain redirect](http://www.arecord.net/)__
 A - Hostname: alinafoto.lv, IP - 122.248.244.139
 CNAME - Hostname: alinafoto.herokuapp.com, ALias: www.alinafoto.lv
 ```
+
+### dyno needs to sleep 6h of 24h
+### sleep mode enables after 30m of inactivity
+__[ping your web once a hour](https://uptimerobot.com/dashboard#777048782)__
