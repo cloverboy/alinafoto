@@ -67,7 +67,8 @@ sudo heroku domains:add alinafoto.lv
 sudo heroku ps -a alinafoto
 ```
 
-### DNS
+### dns
+__[nowww naked domain redirect](http://www.arecord.net/)__
 ```
 A - Hostname: alinafoto.lv, IP - 122.248.244.139
 CNAME - Hostname: alinafoto.herokuapp.com, ALias: www.alinafoto.lv
