@@ -1,45 +1,45 @@
-### login to heroku
+#### login to heroku
 ```
 cd projects/alinafoto/
 sudo heroku login
 ```
 
-### create heroku app
+#### create heroku app
 ```
 sudo heroku create
 ```
 
-### push changes to heroku remote from git master branch
+#### push changes to heroku remote from git master branch
 ```
 sudo git push heroku master
 ```
 
-### ensure we have one dyno running
+#### ensure we have one dyno running
 ```
 sudo heroku ps:scale web=1
 ```
 
-### lists the running dynos of your application
+#### lists the running dynos of your application
 ```
 sudo heroku ps
 ```
 
-### visit the app in our browser 
+#### visit the app in our browser 
 ```
 sudo heroku open
 ```
 
-### view information about your running app
+#### view information about your running app
 ```
 sudo heroku logs --tail
 ```
 
-### open bash terminal
+#### open bash terminal
 ```
 sudo heroku run bash
 ```
 
-### change config variables
+#### change config variables
 __[heroku settings](https://dashboard.heroku.com/apps/alinafoto/settings)__
 ```
 sudo heroku config
@@ -50,30 +50,29 @@ sudo heroku config:remove PYTHONPATH
 FRONTEND_SERVER_PORTS = [int(os.environ.get('PORT', 5000)), ]
 ```
 
-### restart dynos
+#### restart dynos
 ```
 sudo heroku ps:restart
 ```
 
-### manage domains
+#### manage domains
 ```
 sudo heroku domains
 sudo heroku domains:add www.alinafoto.lv
 sudo heroku domains:add alinafoto.lv
 ```
 
-### view the amount of free quota remaining
+#### view the amount of free quota remaining
 ```
 sudo heroku ps -a alinafoto
 ```
 
-### dns
+#### dns
 __[nowww naked domain redirect](http://www.arecord.net/)__
 ```
 A - Hostname: alinafoto.lv, IP - 122.248.244.139
 CNAME - Hostname: alinafoto.herokuapp.com, ALias: www.alinafoto.lv
 ```
 
-### dyno needs to sleep 6h of 24h
-### sleep mode enables after 30m of inactivity
+#### dyno needs to sleep 6h of 24h, sleep mode enables after 30m of inactivity
 __[ping your web once a hour](https://uptimerobot.com/dashboard#777048782)__
