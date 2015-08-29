@@ -71,7 +71,7 @@ sudo heroku ps -a alinafoto
 __[nowww naked domain redirect](http://www.arecord.net/)__
 ```
 A - Hostname: alinafoto.lv, IP - 122.248.244.139
-CNAME - Hostname: alinafoto.herokuapp.com, ALias: www.alinafoto.lv
+CNAME - Hostname: alinafoto.herokuapp.com, Alias: www.alinafoto.lv
 ```
 
 #### dyno needs to sleep 6h of 24h, sleep mode enables after 30m of inactivity
