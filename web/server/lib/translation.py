@@ -13,9 +13,6 @@ logger = logging.getLogger('default')
 class Translation(object):
 
     def find(self, key, lang=DEFAULT_LANG, default=None, more_slashes=False, fix_unicode_prefixes=False):
-        """
-        Uses cache to retrive a value by key and language or checks translation storage
-        """
         result = TRANSLATIONS.get(lang, {}).get(key)
 
         if result is None:
@@ -49,7 +46,7 @@ TRANSLATIONS = {
         'weddings': 'Kāzas',
         'children': 'Bērni',
         'parties': 'Ballītes',
-        'other': 'Dažādi',
+        'others': 'Dažādi',
         'index_page_title': 'Galvenā',
         'weddings_page_title': 'Kāzas',
         'children_page_title': 'Bērni',
@@ -77,7 +74,7 @@ TRANSLATIONS = {
         'weddings': 'Свадьбы',
         'children': 'Дети',
         'parties': 'Вечеринки',
-        'other': 'Разное',
+        'others': 'Разное',
         'index_page_title': 'Главная',
         'weddings_page_title': 'Свадьбы',
         'children_page_title': 'Дети',
@@ -104,7 +101,7 @@ TRANSLATIONS = {
         'weddings': 'Weddings',
         'children': 'Children',
         'parties': 'Parties',
-        'other': 'Others',
+        'others': 'Others',
         'index_page_title': 'Main',
         'weddings_page_title': 'Weddings',
         'children_page_title': 'Children',

@@ -169,7 +169,6 @@ DEFAULT_LOGGER_CONFIG = {
 LOGGER_LIST = []
 LOGGER_LIST.extend(['default', 'manager-server', ])
 LOGGER_LIST.extend(['frontend-server-%s' % port for port in FRONTEND_SERVER_PORTS])
-LOGGER_LIST.extend(['data-provider-%s' % port for port in FRONTEND_SERVER_PORTS])
 
 for item in LOGGER_LIST:
     LOGGING['loggers'][item] = DEFAULT_LOGGER_CONFIG

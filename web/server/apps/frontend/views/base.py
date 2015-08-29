@@ -137,17 +137,3 @@ class BaseHandler(RequestHandler):
 
     def render_error_404(self, lang=DEFAULT_LANG):
         self.render('error.html', lang, page='error', status_code=404)
-
-    def _log_form_error(self, field_errors, cleaned_data, descr='', user_id=None, **kwargs):
-        msg = [
-            descr,
-            'field_errors: <%s>' % field_errors,
-            'cleaned_data: <%s>' % cleaned_data,
-            'user_id: <%s>' % user_id,
-            'ip: <%s>' % self.request.remote_ip,
-            'uri: <%s>' % self.request.uri,
-            'method: <%s>' % self.request.method,
-        ]
-        for k, v in kwargs.items():
-            msg.append('%s: <%s>' % (k, v))
-        logger.error(', '.join(msg))
