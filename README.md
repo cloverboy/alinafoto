@@ -19,17 +19,17 @@ sudo git push heroku master
 sudo heroku ps:scale web=1
 ```
 
-#### lists the running dynos of your application
+#### list running dynos
 ```
 sudo heroku ps
 ```
 
-#### visit the app in our browser 
+#### visit app in web browser 
 ```
 sudo heroku open
 ```
 
-#### view information about your running app
+#### view information about running app
 ```
 sudo heroku logs --tail
 ```
@@ -39,7 +39,7 @@ sudo heroku logs --tail
 sudo heroku run bash
 ```
 
-#### change config variables
+#### manage config variables
 __[heroku settings](https://dashboard.heroku.com/apps/alinafoto/settings)__
 ```
 sudo heroku config
