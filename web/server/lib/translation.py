@@ -35,7 +35,7 @@ TRANSLATIONS = {
     'lv': {
         'site_name': 'Profesionāls fotogrāfs Alīna Taranovska',
         'page_description': 'Kāzu fotogrāfs, svētku fotogrāfs, bērnu pasākumu fotogrāfs, '
-                            'portretu meistars. Zemas cenas. Kāzu fotografs Rīgā.',
+                            'portretu meistars. Zemas cenas. Kāzu fotogrāfs Rīgā.',
         'page_keywords': ['profesionāls fotogrāfs', 'bilžu apstrāde', 'kāzas', 'zemas cenas'],
         'author_name': 'Alina Taranovska',
         'author_email': 'alina.taranovska@gmail.com',
