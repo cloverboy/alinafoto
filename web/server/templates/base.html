@@ -185,17 +185,17 @@
                         <div class="fulscreen relative">
                             <div class="langs">
                                 {% for choice in langs %}
-                                    <a href="{% module url('index_page', choice) %}"><img src="/img/btn_lang_{{ choice }}{% if lang == choice %}_active{% end %}.png" alt="{{ choice }}"/></a>
+                                    <a href="{% module url('index_page', choice) %}"><img src="/img/btn_lang_{{ choice }}{% if lang == choice %}_active{% end %}.png" alt="{% module _('lang_%s' % choice) %}"/></a>
                                 {% end %}
                             </div>
                             <div class="cats">
-                                <a href="{% module url('index_page', lang) %}"><img src="/img/btn_all{% if page == 'index' %}_active{% end %}_{{ lang }}.png" alt="All"/></a>
+                                <a href="{% module url('index_page', lang) %}"><img src="/img/btn_all{% if page == 'index' %}_active{% end %}_{{ lang }}.png" alt="{% module _('all') %}"/></a>
                                 <a href="{% module url('weddings_page', lang) %}"><img src="/img/btn_weddings{% if page == 'weddings' %}_active{% end %}_{{ lang }}.png" alt="{% module _('weddings') %}"/></a>
                                 <a href="{% module url('children_page', lang) %}"><img src="/img/btn_children{% if page == 'children' %}_active{% end %}_{{ lang }}.png" alt="{% module _('children') %}"/></a>
                                 <a href="{% module url('parties_page', lang) %}"><img src="/img/btn_parties{% if page == 'parties' %}_active{% end %}_{{ lang }}.png" alt="{% module _('parties') %}"/></a>
                                 <a href="{% module url('others_page', lang) %}"><img src="/img/btn_others{% if page == 'others' %}_active{% end %}_{{ lang }}.png" alt="{% module _('others') %}"/></a>
                                 <span class="btn btn-guestbook">
-                                    <a href="{% module url('guestbook_page', lang) %}"><img src="/img/btn_guestbook_{{ lang }}.png" alt="Guestbook"/></a>
+                                    <a href="{% module url('guestbook_page', lang) %}"><img src="/img/btn_guestbook_{{ lang }}.png" alt="{% module _('guestbook') %}"/></a>
                                 </span>
                             </div>
                         </div>
