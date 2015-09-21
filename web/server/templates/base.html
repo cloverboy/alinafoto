@@ -92,10 +92,12 @@
                                 "222222",
                                 true,
                                 {
-                                    'galleryURL': '/xml/{{ page }}.xml'
+                                    galleryURL: '/xml/{{ page }}.xml',
+                                    languageCode: '{{ lang.upper() }}',
+                                    languageList: '{% module _("simpleviewer") %}'
                                 },
                                 {
-                                    'wmode':'opaque'
+                                    wmode:'opaque'
                                 }
                         );
 
