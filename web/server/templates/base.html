@@ -169,7 +169,10 @@
 
             function svImageChange(i) {
                 try {
-                    ga('send', 'event', 'imgView', 'flickrId', svAPI.getImageInfo(i).flickrId);
+                    var linkURL = svAPI.getImageInfo(i).linkURL;
+                    if (typeof linkURL !== 'undefined') {
+                        ga('send', 'event', 'imgView', 'linkURL', linkURL);
+                    }
                 }
                 catch (e) {}
             }
