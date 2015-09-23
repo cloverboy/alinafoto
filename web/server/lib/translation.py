@@ -61,6 +61,7 @@ TRANSLATIONS = {
         'error_page_img': 'Kaķēns',
         'error_page_return': 'Atgriezties un sākuma lapu',
         'simpleviewer': 'Iepriekšējā,Nākošā,Ieslēgt AutoPlay,Izslēgt AutoPlay,Atskaņot audio,Uzlikt pauzē,Uz pilno ekrānu,Iziet no pilnā ekrāna,Atvērt bildi jaunā logā,Lejupielādēt bildi,Par izstrādātāju,AutoPlay IESLĒGTS,AutoPlay IZSLĒGTS',
+        'contacts': 'Kontakti',
     },
     'ru': {
         'site_name': 'Профессиональная фотосъёмка от Алины Тарановской',
@@ -92,6 +93,7 @@ TRANSLATIONS = {
         'error_page_img': 'Котёнок',
         'error_page_return': 'Вернуться на главную страницу',
         'simpleviewer': 'Предыдущая,Следующая,Включить AutoPlay,Остановить AutoPlay,Включить звук,Пауза звука,На весь экран,Выйти из полного экрана,Открыть фото в новом окне,Скачать фото,О разработчике,AutoPlay ВКЛ,AutoPlay ВЫКЛ',
+        'contacts': 'Контакты',
     },
     'en': {
         'site_name': 'Professional photographer Alina Taranovska',
@@ -122,5 +124,6 @@ TRANSLATIONS = {
         'error_page_img': 'Kitten',
         'error_page_return': 'Visit main page',
         'simpleviewer': 'Previous,Next,Start AutoPlay,Stop AutoPlay,Play Audio,Pause Audio,Go FullScreen,Exit FullScreen,Open Image in New Window,Download Image,About,AutoPlay ON,AutoPlay OFF',
+        'contacts': 'Contacts',
     },
 }
