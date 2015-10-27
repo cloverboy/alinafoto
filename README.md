@@ -67,11 +67,28 @@ sudo heroku domains:add alinafoto.lv
 sudo heroku ps -a alinafoto
 ```
 
-#### dns
+#### default dns
 __[nowww naked domain redirect](http://www.arecord.net/)__
 ```
+NS: ns1.dns.lv, ns2.dns.lv
 A - Hostname: alinafoto.lv, IP - 122.248.244.139
 CNAME - Hostname: alinafoto.herokuapp.com, Alias: www.alinafoto.lv
+```
+
+#### cloudflare dns
+__[free dns + cdn](https://www.cloudflare.com/a/dns/alinafoto.lv)__
+```
+NS: ada.ns.cloudflare.com, kurt.ns.cloudflare.com
+CNAME - Name: www, Domain name: alinafoto.herokuapp.com
+CNAME - Name: alinafoto.lv, Domain name: alinafoto.herokuapp.com
+```
+
+#### mx record
+__[mailgun](https://mailgun.com/app/domains)__
+```
+- register a free account at mailgun
+- add a mailgun MX record to your cloudflare dns
+- set up a forwarding rule at mailgun
 ```
 
 #### dyno needs to sleep 6h of 24h, sleep mode enables after 30m of inactivity
